@@ -1,14 +1,9 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist, Geist_Mono, Montserrat } from "next/font/google";
 import "./globals.css";
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+import { Header } from "@/components/Header";
+import { ClerkProvider } from "@clerk/nextjs";
+const montserrat = Montserrat({
   subsets: ["latin"],
 });
 
@@ -23,12 +18,17 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        {children}
-      </body>
-    </html>
+    <ClerkProvider>
+      <html lang="en">
+        <body
+          className={`${montserrat.className}} antialiased  bg-black text-white`}
+        >
+          <Header />
+          <div className="max-sm:px-2 sm:px-6 md:px-10  lg:px-20 ">
+            {children}
+          </div>
+        </body>
+      </html>
+    </ClerkProvider>
   );
 }
