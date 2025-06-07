@@ -55,18 +55,18 @@ const DragAndDropUpload: React.FC<UploadProps> = ({
   });
 
   return (
-    <div className="max-w-xl  py-8 px-4">
+    <div className="max-w-full  py-8 pr-4">
       <div
         {...getRootProps()}
         className={`flex flex-col items-center justify-center border-2 border-dashed rounded-2xl p-10 text-center cursor-pointer transition-all duration-300 shadow-sm ${
           isDragActive
             ? "border-green-400 bg-blue-100"
-            : "border-gray-300 bg-white hover:bg-gray-50"
+            : "border-neutral-500 bg-black hover:bg-black-100"
         }`}
       >
         <input {...getInputProps()} />
-        <UploadCloud className="w-10 h-10 text-blue-500 mb-3" />
-        <p className="text-gray-600 pb-4">
+        <UploadCloud className="w-10 h-10 text-white mb-3" />
+        <p className="text-neutral-400 pb-4">
           {isDragActive
             ? "Drop the files here"
             : "Drag & drop files here or click to browse"}

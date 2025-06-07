@@ -3,6 +3,7 @@ import { Geist, Geist_Mono, Montserrat } from "next/font/google";
 import "./globals.css";
 import { Header } from "@/components/Header";
 import { ClerkProvider } from "@clerk/nextjs";
+import Footer from "@/components/Footer";
 const montserrat = Montserrat({
   subsets: ["latin"],
 });
@@ -27,6 +28,7 @@ export default function RootLayout({
           <div className="max-sm:px-2 sm:px-6 md:px-10  lg:px-20 ">
             {children}
           </div>
+          <Footer />
         </body>
       </html>
     </ClerkProvider>

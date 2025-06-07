@@ -9,7 +9,7 @@ import {
 } from "@clerk/nextjs";
 export const Header = () => {
   return (
-    <div className="flex sticky border-b border-neutral-900  backdrop-blur-2xl top-0  items-center justify-between py-4  max-sm:px-2 sm:px-6 md:px-10  lg:px-20">
+    <div className="flex sticky border-b border-neutral-900  backdrop-blur-lg z-10 top-0  items-center justify-between py-4  max-sm:px-2 sm:px-6 md:px-10  lg:px-20">
       <Link href="/" className="text-2xl font-bold">
         NeuroCV
       </Link>
@@ -34,8 +34,11 @@ export const Header = () => {
           <Button className="bg-blue-600">
             <Link href="/">Signup for free</Link>
           </Button> */}
-          <SignInButton />
-          <SignUpButton />
+          <Button className="px-4 bg-white text-black hover:bg-neutral-400 cursor-pointer">
+            {/* <SignInButton /> */}
+            <Link href="/sign-in">Sign in</Link>
+          </Button>
+          {/* <SignUpButton /> */}
         </SignedOut>
       </div>
     </div>
