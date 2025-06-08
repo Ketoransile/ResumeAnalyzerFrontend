@@ -1,7 +1,6 @@
 import Link from "next/link";
 import { Button } from "./ui/button";
 import { Highlight } from "./ui/hero-highlight";
-import DragAndDropUpload from "./DragAndDropUpload";
 
 export const Hero = () => {
   return (

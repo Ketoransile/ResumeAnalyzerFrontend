@@ -3,7 +3,7 @@ import React, { useCallback, useState } from "react";
 import { useDropzone, FileRejection } from "react-dropzone";
 import { UploadCloud, FileText } from "lucide-react";
 import { Button } from "./ui/button";
-import { uploadFiles } from "@/lib/uploadFiles";
+// import { uploadFiles } from "@/lib/uploadFiles";
 
 interface UploadProps {
   onUploadComplete?: (files: File[]) => void;
@@ -49,7 +49,7 @@ const DragAndDropUpload: React.FC<UploadProps> = ({
     maxFiles,
     maxSize,
     accept: {
-      "image/*": [".jpeg", ".jpg", ".png", ".gif"],
+      // "image/*": [".jpeg", ".jpg", ".png", ".gif"],
       "application/pdf": [".pdf"],
     },
   });

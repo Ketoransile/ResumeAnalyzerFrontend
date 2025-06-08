@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono, Montserrat } from "next/font/google";
+import { Montserrat } from "next/font/google";
 import "./globals.css";
 import { Header } from "@/components/Header";
 import { ClerkProvider } from "@clerk/nextjs";
 import Footer from "@/components/Footer";
+import { Toaster } from "@/components/ui/sonner";
 const montserrat = Montserrat({
   subsets: ["latin"],
 });
@@ -22,12 +23,14 @@ export default function RootLayout({
     <ClerkProvider>
       <html lang="en">
         <body
-          className={`${montserrat.className}} antialiased  bg-black text-white`}
+          className={`${montserrat.className} antialiased  bg-black text-white`}
         >
           <Header />
-          <div className="max-sm:px-2 sm:px-6 md:px-10  lg:px-20 ">
+          {/* <main className="max-sm:px-2 sm:px-6 md:px-10  lg:px-20 "> */}
+          <main className="">
             {children}
-          </div>
+            <Toaster />
+          </main>
           <Footer />
         </body>
       </html>
