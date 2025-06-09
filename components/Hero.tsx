@@ -16,11 +16,15 @@ export const Hero = () => {
         recruiter would. Instantly get a score along with detailed, actionable
         tips to improve your chances of landing interviews—completely free.
       </h2>
+      <p className="text-xs text-neutral-300 mt-2">
+        Powered by cutting-edge{" "}
+        <span className="font-semibold">GPT-4.1 AI</span> technology.
+      </p>
       <Button
         className="py-6 bg-white text-black mt-6 hover:bg-neutral-400"
         asChild
       >
-        <Link href="#" className="text-lg text-black">
+        <Link href="#upload-resume-form" className="text-lg text-black">
           Get Started - It&apos;s is 100% Free!
         </Link>
       </Button>

@@ -90,7 +90,9 @@ export default function UploadResume() {
         values.jobDescription
       );
       console.log("Uplaod succesfull", responseData);
-      toast.success("Resume and Job Description uploaded successfully!");
+      form.reset();
+      toast.success("Analysis is ready! Redirecting to your results.");
+
       router.push(`/result/${responseData?._id}`);
     } catch (error) {
       console.error("Submission error:", error);
@@ -113,7 +115,11 @@ export default function UploadResume() {
   }
   return (
     <Form {...form}>
-      <form className="w-full" onSubmit={form.handleSubmit(onSubmit)}>
+      <form
+        className="w-full"
+        onSubmit={form.handleSubmit(onSubmit)}
+        id="upload-resume-form"
+      >
         <div className="w-full flex flex-col items-center justify-center gap-6 pb-20">
           <h1 className="text-3xl font-bold text-center">
             Check Your Resume Score
