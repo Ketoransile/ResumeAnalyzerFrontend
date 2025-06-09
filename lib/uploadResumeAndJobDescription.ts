@@ -28,7 +28,7 @@ export const uploadResumeAndJobDescription = async (
     const result = await response.json();
     console.log("analysis successfull:", result);
     return result;
-  } catch (error: any) {
+  } catch (error: unknown) {
     console.error("Anlaysis Error:", error);
     throw error;
   }

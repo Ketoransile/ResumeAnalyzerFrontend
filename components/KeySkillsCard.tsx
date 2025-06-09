@@ -16,7 +16,7 @@
 // };
 // Example KeySkillsCard component (assuming React/Next.js)
 export // Example KeySkillsCard component (assuming React/Next.js)
-const KeySkillsCard = ({ title }) => {
+const KeySkillsCard = ({ title }: { title: string }) => {
   return (
     <div
       className="

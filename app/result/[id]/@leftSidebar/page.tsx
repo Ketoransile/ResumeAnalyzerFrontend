@@ -1,19 +1,16 @@
 "use client";
 import LeftSidebar from "@/components/LeftSidebar";
-
+import { fetchAllResumeAnalysis } from "../fetchAllResumeAnalysis";
 import { useEffect, useState } from "react";
 import { useAuth } from "@clerk/nextjs";
 import { useRouter } from "next/navigation";
-import { fetchAllResumeAnalysis } from "./[id]/fetchAllResumeAnalysis";
-import { IResumeAnalysisResult } from "./[id]/fetchResumeAnalysis";
-export default function ResultPage() {
+import { IResumeAnalysisResult } from "../fetchResumeAnalysis";
+export default function LeftSidebarPage() {
   const { isLoaded, isSignedIn, getToken } = useAuth();
   const router = useRouter();
   const [allAnalysisData, setAllAnalysisData] = useState<
     IResumeAnalysisResult[]
   >([]);
-  // const [loading, setLoading] = useState<boolean>(true);
-  // const [error, setError] = useState<string | null>(null);
   const [loadingAll, setLoadingAll] = useState<boolean>(true);
   const [errorAll, setErrorAll] = useState<string | null>(null);
   const handleCardClick = (item: IResumeAnalysisResult) => {
@@ -49,8 +46,16 @@ export default function ResultPage() {
         setAllAnalysisData(results);
       } catch (error: unknown) {
         console.error("Error while fetching all analyses data", error);
-        if (error instanceof Error) {
-          setErrorAll(error.message || "Failed to load all analyses");
+        if (
+          typeof error === "object" &&
+          error !== null &&
+          "message" in error &&
+          typeof (error as { message?: string }).message === "string"
+        ) {
+          setErrorAll(
+            (error as { message: string }).message ||
+              "Failed to load all analyses"
+          );
         } else {
           setErrorAll("Failed to load all analyses");
         }
@@ -60,29 +65,13 @@ export default function ResultPage() {
     }
     fetchAllAnalyses();
   }, [getToken, isLoaded, isSignedIn, router]);
+
   return (
-    <div className="w-full    pt-10 gap-12 px-4 ">
-      {errorAll ? (
-        <div className="flex flex-col items-center justify-center h-[calc(100vh-150px)] text-center text-neutral-400">
-          <p className="text-xl font-semibold mb-4">
-            No analysis history found.
-          </p>
-          <p className="text-sm">
-            There was an issue loading your past analyses. Please ensure you are
-            logged in or try again later.
-          </p>
-          {/* You could optionally display the error message here for debugging, but usually not for users: */}
-          {/* <p className="text-xs text-red-500 mt-2">{errorAll}</p> */}
-        </div>
-      ) : (
-        <LeftSidebar
-          data={allAnalysisData}
-          loadingAll={loadingAll}
-          errorAll={errorAll}
-          onCardClick={handleCardClick}
-          isResultPage
-        />
-      )}
-    </div>
+    <LeftSidebar
+      data={allAnalysisData}
+      loadingAll={loadingAll}
+      errorAll={errorAll}
+      onCardClick={handleCardClick}
+    />
   );
 }

@@ -6,6 +6,10 @@ interface BackendAllAnalysisResponse {
   message: string;
   data: IResumeAnalysisResult[];
 }
+interface ErrorResponse {
+  message?: string;
+  [key: string]: unknown; // Optional: to allow other unexpected fields
+}
 export const fetchAllResumeAnalysis = async ({
   token,
 }: {
@@ -26,7 +30,7 @@ export const fetchAllResumeAnalysis = async ({
     );
     const contentType = response.headers.get("content-type");
     if (!response.ok) {
-      let errorData: any;
+      let errorData: ErrorResponse | string;
       if (contentType?.includes("application/json")) {
         errorData = await response.json();
       } else {
@@ -34,7 +38,14 @@ export const fetchAllResumeAnalysis = async ({
       }
       console.error("Error response body: ", errorData);
       throw new Error(
-        errorData.message ||
+        (typeof errorData === "object" &&
+        errorData !== null &&
+        "message" in errorData &&
+        typeof (errorData as ErrorResponse).message === "string"
+          ? (errorData as ErrorResponse).message
+          : typeof errorData === "string"
+          ? errorData
+          : undefined) ||
           `Server returned an error: ${response.status} ${response.statusText}`
       );
     }

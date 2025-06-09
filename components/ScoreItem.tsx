@@ -40,7 +40,7 @@
 // This `getScoreColor` function needs to be accessible where the AccordionItem is used,
 // or passed down as a prop if ScoreItem is the only place it's defined.
 // Assuming it's accessible or defined in the parent component.
-const getScoreColor = (score) => {
+const getScoreColor = (score: number) => {
   if (score >= 0 && score <= 39) return "#EF4444"; // red-500
   if (score >= 40 && score <= 69) return "#FACC15"; // amber-400
   if (score >= 70 && score <= 89) return "#4ADE80"; // green-400
@@ -56,6 +56,10 @@ export const ScoreItem = ({
   title,
   value,
   isLarge = false, // New prop to control size and text display
+}: {
+  title: string;
+  value: string;
+  isLarge: boolean;
 }) => {
   const valueNumber = Number(value);
   const scoreColor = getScoreColor(valueNumber); // Use the consistent color function

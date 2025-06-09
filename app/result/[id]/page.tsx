@@ -11,12 +11,9 @@ import fetchResumeAnalysis, {
 } from "./fetchResumeAnalysis";
 import { useAuth } from "@clerk/nextjs";
 import { useRouter } from "next/navigation";
-import DashboardLayout from "./layout";
-import { ResumeAnalysisCard } from "@/components/ResumeAnalysisCard";
 import { ScoreItem } from "@/components/ScoreItem";
 import { KeySkillsCard } from "@/components/KeySkillsCard";
-import { fetchAllResumeAnalysis } from "./fetchAllResumeAnalysis";
-import LeftSidebar from "@/components/LeftSidebar";
+
 export default function ResumeAnalysisPage({
   params,
 }: {
@@ -27,17 +24,10 @@ export default function ResumeAnalysisPage({
 
   const [analysisData, setAnalysisData] =
     useState<IResumeAnalysisResult | null>(null);
-  const [allAnalysisData, setAllAnalysisData] = useState<
-    IResumeAnalysisResult[]
-  >([]);
+
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
-  const [loadingAll, setLoadingAll] = useState<boolean>(true);
-  const [errorAll, setErrorAll] = useState<string | null>(null);
 
-  const handleCardClick = (item: IResumeAnalysisResult) => {
-    router.push(`/result/${item._id}`);
-  };
   useEffect(() => {
     async function fetchAnalysisData() {
       const { id } = await params;
@@ -68,12 +58,19 @@ export default function ResumeAnalysisPage({
         const result = await fetchResumeAnalysis({ id, token });
         console.log("Result from /result/id page", result);
         setAnalysisData(result);
-      } catch (error: any) {
+      } catch (error: unknown) {
         // console.error("Error while fetching analysis data", error);
         // setError(error.message || "Failed to load analysis");
         if (
-          error.response &&
-          (error.response.status === 403 || error.response.status === 404)
+          typeof error === "object" &&
+          error !== null &&
+          "response" in error &&
+          typeof (error as { response?: { status?: number } }).response ===
+            "object" &&
+          (error as { response?: { status?: number } }).response &&
+          ((error as { response: { status: number } }).response.status ===
+            403 ||
+            (error as { response: { status: number } }).response.status === 404)
         ) {
           // If backend returns 403 or 404 for unauthorized access
           setError(
@@ -81,11 +78,19 @@ export default function ResumeAnalysisPage({
           );
           // Optional: redirect to a safe page if you want to prevent user from staying on this URL
           // router.push("/result");
-        } else {
+        } else if (
+          typeof error === "object" &&
+          error !== null &&
+          "message" in error &&
+          typeof (error as { message?: string }).message === "string"
+        ) {
           // For any other kind of error (e.g., network error, actual server bug)
           setError(
-            error.message || "Failed to load analysis. Please try again."
+            (error as { message: string }).message ||
+              "Failed to load analysis. Please try again."
           );
+        } else {
+          setError("Failed to load analysis. Please try again.");
         }
       } finally {
         setLoading(false);
@@ -93,43 +98,6 @@ export default function ResumeAnalysisPage({
     }
     fetchAnalysisData();
   }, [getToken, params, isLoaded, isSignedIn, router]);
-  useEffect(() => {
-    async function fetchAllAnalyses() {
-      const token = await getToken();
-      if (!isLoaded || !isSignedIn) {
-        if (isLoaded) {
-          setErrorAll("User not authenticated for all analyses");
-        }
-        setLoadingAll(false);
-        return;
-      }
-      try {
-        setLoadingAll(true);
-        setErrorAll(null);
-        if (!token) {
-          if (isSignedIn) {
-            console.warn(
-              "TOken not available but user is signed in. Retrying...."
-            );
-            setTimeout(fetchAllAnalyses, 500);
-            return;
-          }
-          router.push("/sign-in");
-          return;
-        }
-        console.log("Fetching all analyses with token: ", token);
-        const results = await fetchAllResumeAnalysis({ token });
-        console.log("All analyses fetched: ", results);
-        setAllAnalysisData(results);
-      } catch (error: any) {
-        console.error("Error while fetching all analyses data", error);
-        setErrorAll(error.message || "Failed to load all analyses");
-      } finally {
-        setLoadingAll(false);
-      }
-    }
-    fetchAllAnalyses();
-  }, [getToken, isLoaded, isSignedIn, router]);
 
   // const renderLeftSidebarContent = (
   //   title: string,
@@ -286,22 +254,7 @@ export default function ResumeAnalysisPage({
   // );
 
   return (
-    <DashboardLayout
-      // leftSidebar={renderLeftSidebarContent("Your Score", analysisData)}
-      leftSidebar={
-        <LeftSidebar
-          data={allAnalysisData}
-          loadingAll={loadingAll}
-          errorAll={errorAll}
-          onCardClick={handleCardClick}
-        />
-      }
-      // rightSidebar={renderSidebarContent(
-      //   "Other Info/Tools",
-      //   analysisData,
-      //   false
-      // )} // Example for right sidebar
-    >
+    <div>
       {
         // loading || (!isLoaded && !error) ? (
         //   <div className="text-center text-white">Loading analysis...</div>
@@ -1732,6 +1685,6 @@ export default function ResumeAnalysisPage({
           </Accordion>
         )
       }
-    </DashboardLayout>
+    </div>
   );
 }

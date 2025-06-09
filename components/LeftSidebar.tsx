@@ -24,7 +24,7 @@ const LeftSidebar = ({
       type="single"
       defaultValue={"item-1"}
       collapsible
-      className={`${isResultPage ? "w-full flex px-20" : "w-96"} min-h-full`}
+      className={`${isResultPage ? "w-full  flex px-20" : "w-96"} min-h-full`}
     >
       <AccordionItem
         value="item-1"

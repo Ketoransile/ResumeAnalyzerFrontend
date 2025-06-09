@@ -13,13 +13,13 @@ import { Loader2Icon } from "lucide-react";
 import {
   Form,
   FormControl,
-  FormDescription,
+  // FormDescription,
   FormField,
   FormItem,
-  FormLabel,
+  // FormLabel,
   FormMessage,
 } from "@/components/ui/form";
-import { Input } from "@/components/ui/input";
+// import { Input } from "@/components/ui/input";
 import { uploadResumeAndJobDescription } from "@/lib/uploadResumeAndJobDescription";
 import { useAuth } from "@clerk/nextjs";
 const MAX_FILE_SIZE = 5 * 1024 * 1024;
@@ -54,7 +54,7 @@ export interface ResponseData {
   tailored_summary_for_role: string;
   relevant_interview_questions: string[];
   potential_red_flags: string[];
-  rawAIResponse?: any;
+  rawAIResponse?: unknown;
 }
 export default function UploadResume() {
   const { getToken } = useAuth();
@@ -97,8 +97,8 @@ export default function UploadResume() {
     } catch (error) {
       console.error("Submission error:", error);
       const errorMessage =
-        (error as any)?.response?.data?.error ||
-        "Failed to get result. Please try again.";
+        (error as { response?: { data?: { error?: string } } })?.response?.data
+          ?.error || "Failed to get result. Please try again.";
 
       // setUploadError(errorMessage);
       toast.error(errorMessage);
@@ -140,7 +140,7 @@ export default function UploadResume() {
               <FormField
                 control={form.control}
                 name="resumeFile"
-                render={({ field }) => (
+                render={() => (
                   <FormItem>
                     <FormControl>
                       <DragAndDropUpload

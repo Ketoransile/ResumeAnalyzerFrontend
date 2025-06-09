@@ -3,10 +3,9 @@
 import Link from "next/link";
 import { Button } from "./ui/button";
 import { SignedIn, SignedOut, UserButton } from "@clerk/nextjs";
-import { usePathname, useRouter } from "next/navigation";
+import { usePathname } from "next/navigation";
 import { FiBarChart2 } from "react-icons/fi";
 export const Header = () => {
-  const router = useRouter();
   const pathname = usePathname();
 
   const homePagePath = "/";

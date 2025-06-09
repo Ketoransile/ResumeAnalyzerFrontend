@@ -231,7 +231,7 @@ export default function HowItWorksSection() {
                  bg-black min-h-screen text-white px-4 md:px-0" // Overall section styling
     >
       {/* Optional: Subtle background gradient/blob for depth */}
-      <div className="w-full absolute inset-0 bg-neutral-900 pointer-events-none p-4 z-0"></div>
+      {/* <div className="w-full absolute inset-0 bg-neutral-900 pointer-events-none p-4 z-0"></div> */}
 
       <h1 className="text-4xl md:text-5xl font-extrabold text-white mb-16 text-center z-10">
         How It Works

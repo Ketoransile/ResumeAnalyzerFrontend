@@ -28,7 +28,6 @@ export const ResumeAnalysisCard = ({
     analysisDate,
     jobDescriptionText,
     overall_fit_score,
-    aiModelUsed, // Assuming this property is part of IResumeAnalysisResult
   } = analysisData;
 
   // const formattedDate = analysisDate ? formatDate(analysisDate) : "N/A";

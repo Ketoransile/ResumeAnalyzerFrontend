@@ -29,8 +29,12 @@ const DragAndDropUpload: React.FC<UploadProps> = ({
       try {
         console.log(acceptedFiles);
         // await uploadFiles(acceptedFiles); // ✅ calling upload function
-      } catch (err: any) {
-        setUploadError(err.message || "Something went wrong during upload.");
+      } catch (err: unknown) {
+        if (err instanceof Error) {
+          setUploadError(err.message || "Something went wrong during upload.");
+        } else {
+          setUploadError("Something went wrong during upload.");
+        }
       }
     },
     [onUploadComplete]
