@@ -24,10 +24,10 @@ export const fetchAllResumeAnalysis = async ({
         Authorization: `Bearer ${token}`,
       },
     });
-    console.log(
-      "Response object from fetchAllResumeAnalysis function is",
-      response
-    );
+    // console.log(
+    //   "Response object from fetchAllResumeAnalysis function is",
+    //   response
+    // );
     const contentType = response.headers.get("content-type");
     if (!response.ok) {
       let errorData: ErrorResponse | string;
@@ -56,7 +56,7 @@ export const fetchAllResumeAnalysis = async ({
       );
     }
     const fullResponse: BackendAllAnalysisResponse = await response.json();
-    console.log("Parsed all resume result is ", fullResponse);
+    // console.log("Parsed all resume result is ", fullResponse);
     if (!fullResponse.success) {
       throw new Error(
         fullResponse.message || "Backend reported an unsuccessful operation."

@@ -28,8 +28,8 @@ const fetchResumeAnalysis = async ({
   token: string;
 }): Promise<IResumeAnalysisResult> => {
   try {
-    console.log("id is", id);
-    console.log("token is", token);
+    // console.log("id is", id);
+    // console.log("token is", token);
     const response = await fetch(
       `${baseUrl}/api/v1/resume/getSingleAnalysis/${id}`,
       {
@@ -40,10 +40,10 @@ const fetchResumeAnalysis = async ({
         },
       }
     );
-    console.log(
-      "Response object from fetchREsumeANalysis function is ",
-      response
-    );
+    // console.log(
+    //   "Response object from fetchREsumeANalysis function is ",
+    //   response
+    // );
     const contentType = response.headers.get("content-type");
     if (!response.ok) {
       const errorText = await response.text(); // fallback if JSON fails

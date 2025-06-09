@@ -27,7 +27,7 @@ const DragAndDropUpload: React.FC<UploadProps> = ({
         onUploadComplete(acceptedFiles);
       }
       try {
-        console.log(acceptedFiles);
+        // console.log(acceptedFiles);
         // await uploadFiles(acceptedFiles); // ✅ calling upload function
       } catch (err: unknown) {
         if (err instanceof Error) {

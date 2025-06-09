@@ -19,14 +19,14 @@ export const uploadResumeAndJobDescription = async (
         Authorization: `Bearer ${token}`,
       },
     });
-    console.log("response object from uplad resumeand description ", response);
+    // console.log("response object from uplad resumeand description ", response);
     if (!response.ok) {
       const errorData = await response.json();
       throw new Error(errorData.message || "Upload failed");
     }
 
     const result = await response.json();
-    console.log("analysis successfull:", result);
+    // console.log("analysis successfull:", result);
     return result;
   } catch (error: unknown) {
     console.error("Anlaysis Error:", error);

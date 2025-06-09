@@ -43,9 +43,9 @@ export default function ResultPage() {
           router.push("/sign-in");
           return;
         }
-        console.log("Fetching all analyses with token: ", token);
+        // console.log("Fetching all analyses with token: ", token);
         const results = await fetchAllResumeAnalysis({ token });
-        console.log("All analyses fetched: ", results);
+        // console.log("All analyses fetched: ", results);
         setAllAnalysisData(results);
       } catch (error: unknown) {
         console.error("Error while fetching all analyses data", error);

@@ -53,10 +53,10 @@ export default function ResumeAnalysisPage({
           return;
         }
 
-        console.log("id from resuls/id page is", id);
-        console.log("token from result/id page is ", token);
+        // console.log("id from resuls/id page is", id);
+        // console.log("token from result/id page is ", token);
         const result = await fetchResumeAnalysis({ id, token });
-        console.log("Result from /result/id page", result);
+        // console.log("Result from /result/id page", result);
         setAnalysisData(result);
       } catch (error: unknown) {
         // console.error("Error while fetching analysis data", error);

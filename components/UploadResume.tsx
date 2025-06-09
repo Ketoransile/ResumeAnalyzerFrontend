@@ -89,7 +89,7 @@ export default function UploadResume() {
         values.resumeFile,
         values.jobDescription
       );
-      console.log("Uplaod succesfull", responseData);
+      // console.log("Uplaod succesfull", responseData);
       form.reset();
       toast.success("Analysis is ready! Redirecting to your results.");
 
@@ -109,9 +109,9 @@ export default function UploadResume() {
     // Do something with the form values.
     // ✅ This will be type-safe and validated.
 
-    console.log("Form values:", values);
-    console.log("Resume File:", values.resumeFile);
-    console.log("Job Description:", values.jobDescription);
+    // console.log("Form values:", values);
+    // console.log("Resume File:", values.resumeFile);
+    // console.log("Job Description:", values.jobDescription);
   }
   return (
     <Form {...form}>
