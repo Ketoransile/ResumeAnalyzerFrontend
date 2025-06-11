@@ -14,19 +14,16 @@ export const Header = () => {
     e: React.MouseEvent<HTMLAnchorElement>,
     sectionId: string
   ) => {
-    const targetHref = e.currentTarget.getAttribute("href"); // Get the href attribute (e.g., "/#howItWorks")
-    const targetPath = targetHref ? targetHref.split("#")[0] || "/" : "/"; // Extract the path part (e.g., "/")
+    const targetHref = e.currentTarget.getAttribute("href");
+    const targetPath = targetHref ? targetHref.split("#")[0] || "/" : "/";
 
-    // Check if the link points to the current page AND has a hash
     if (pathname === targetPath && sectionId) {
-      e.preventDefault(); // Prevent the default instant jump
+      e.preventDefault();
       const targetElement = document.getElementById(sectionId);
       if (targetElement) {
-        targetElement.scrollIntoView({ behavior: "smooth", block: "start" }); // Smooth scroll to the element
+        targetElement.scrollIntoView({ behavior: "smooth", block: "start" });
       }
     }
-    // If it's a different page or no hash, let <Link> handle the navigation normally.
-    // The useEffect on the target page will then handle the scroll.
   };
   return (
     <div className="flex sticky border-b border-neutral-900  backdrop-blur-lg  top-0  items-center justify-between py-4  max-sm:px-2 sm:px-6 md:px-10  lg:px-20 z-100">
@@ -64,7 +61,6 @@ export const Header = () => {
       </div>
 
       <div className="flex items-center justify-center gap-4">
-        {/* <Button className=" text-blue-600"> */}
         <SignedIn>
           <UserButton>
             <UserButton.MenuItems>

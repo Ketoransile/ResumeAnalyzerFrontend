@@ -17,7 +17,7 @@ const LeftSidebar = ({
   loadingAll: boolean;
   errorAll: string | null;
   onCardClick: (item: IResumeAnalysisResult) => void;
-  isResultPage?: boolean; // Optional prop to indicate if it's on the result page
+  isResultPage?: boolean; 
 }) => {
   return (
     <Accordion
@@ -44,7 +44,7 @@ const LeftSidebar = ({
         "
         >
           <span className="flex items-center gap-3">
-            {/* Icon for Previous Evaluations */}
+       
             <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 24 24"
@@ -65,7 +65,7 @@ const LeftSidebar = ({
 
         <AccordionContent className="pt-4">
           <div className="flex flex-col gap-3 max-h-[70vh] overflow-y-auto pr-2">
-            {/* Custom Scrollbar Styling for dark theme */}
+           
             <style jsx>{`
               .overflow-y-auto::-webkit-scrollbar {
                 width: 8px;
@@ -94,9 +94,9 @@ const LeftSidebar = ({
             ) : data && data.length > 0 ? (
               data.map((item, index) => (
                 <ResumeAnalysisCard
-                  key={item._id || index} // Use a unique ID for the key if available
+                  key={item._id || index} 
                   analysisData={item}
-                  onClick={() => onCardClick(item)} // Pass the item to the click handler
+                  onClick={() => onCardClick(item)} 
                 />
               ))
             ) : (

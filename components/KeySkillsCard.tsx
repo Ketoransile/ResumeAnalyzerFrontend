@@ -1,22 +1,4 @@
-// import { Button } from "./ui/button";
-
-// export const KeySkillsCard = ({ title }: { title: string }) => {
-//   return (
-//     // <Button className="rounded-full p-4 bg-green-500 hover:bg-green-400">
-//     //   {title}
-//     // </Button>
-//     <Button
-//       type="button"
-//       aria-label={`Skill: ${title}`}
-//       className="rounded-full px-4 py-2 bg-green-500 hover:bg-green-400 focus:outline-none focus:ring-2 focus:ring-green-300 transition"
-//     >
-//       {title}
-//     </Button>
-//   );
-// };
-// Example KeySkillsCard component (assuming React/Next.js)
-export // Example KeySkillsCard component (assuming React/Next.js)
-const KeySkillsCard = ({ title }: { title: string }) => {
+export const KeySkillsCard = ({ title }: { title: string }) => {
   return (
     <div
       className="

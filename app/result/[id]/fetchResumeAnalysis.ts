@@ -1,5 +1,5 @@
 export interface IResumeAnalysisResult {
-  _id: string; // MongoDB's ObjectId is typically returned as a string on the frontend
+  _id: string;
   userId: string;
   resumeFileName: string;
   resumeCloudinaryUrl: string;
@@ -13,11 +13,11 @@ export interface IResumeAnalysisResult {
   tailored_summary_for_role: string;
   relevant_interview_questions: string[];
   potential_red_flags: string[];
-  rawAIResponse: object; // Use 'object' if its internal structure isn't strictly typed yet
-  analysisDate: string; // Date objects from MongoDB are usually strings in ISO format on frontend
+  rawAIResponse: object;
+  analysisDate: string;
   createdAt: string;
   updatedAt: string;
-  __v: number; // Mongoose version key
+  __v: number;
 }
 const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || "http://localhost:5000";
 const fetchResumeAnalysis = async ({
@@ -28,8 +28,6 @@ const fetchResumeAnalysis = async ({
   token: string;
 }): Promise<IResumeAnalysisResult> => {
   try {
-    // console.log("id is", id);
-    // console.log("token is", token);
     const response = await fetch(
       `${baseUrl}/api/v1/resume/getSingleAnalysis/${id}`,
       {
@@ -40,13 +38,10 @@ const fetchResumeAnalysis = async ({
         },
       }
     );
-    // console.log(
-    //   "Response object from fetchREsumeANalysis function is ",
-    //   response
-    // );
+
     const contentType = response.headers.get("content-type");
     if (!response.ok) {
-      const errorText = await response.text(); // fallback if JSON fails
+      const errorText = await response.text();
       console.error("Error response body:", errorText);
       throw new Error(
         `Server returned an error: ${response.status} ${response.statusText}`

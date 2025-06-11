@@ -12,8 +12,7 @@ export default function ResultPage() {
   const [allAnalysisData, setAllAnalysisData] = useState<
     IResumeAnalysisResult[]
   >([]);
-  // const [loading, setLoading] = useState<boolean>(true);
-  // const [error, setError] = useState<string | null>(null);
+
   const [loadingAll, setLoadingAll] = useState<boolean>(true);
   const [errorAll, setErrorAll] = useState<string | null>(null);
   const handleCardClick = (item: IResumeAnalysisResult) => {
@@ -71,8 +70,6 @@ export default function ResultPage() {
             There was an issue loading your past analyses. Please ensure you are
             logged in or try again later.
           </p>
-          {/* You could optionally display the error message here for debugging, but usually not for users: */}
-          {/* <p className="text-xs text-red-500 mt-2">{errorAll}</p> */}
         </div>
       ) : (
         <LeftSidebar

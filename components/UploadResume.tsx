@@ -24,7 +24,6 @@ import { uploadResumeAndJobDescription } from "@/lib/uploadResumeAndJobDescripti
 import { useAuth } from "@clerk/nextjs";
 const MAX_FILE_SIZE = 5 * 1024 * 1024;
 const formSchema = z.object({
-  // This field will be used to store the resume file (File object)
   resumeFile: z
     .instanceof(File, { message: "Please upload a resume file." })
     .refine((file) => file.size <= MAX_FILE_SIZE, `Max file size is 5MB.`)
@@ -60,19 +59,19 @@ export default function UploadResume() {
   const { getToken } = useAuth();
 
   const [isLoading, setIsLoading] = useState(false);
-  // const [uploadError, setUploadError] = useState<string | null>(null);
+
   const router = useRouter();
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
-      resumeFile: undefined, // Default to undefined for file input
+      resumeFile: undefined,
       jobDescription: "",
     },
   });
   const handleResumeFileUpload = (files: File[]) => {
     if (files.length > 0) {
-      form.setValue("resumeFile", files[0]); // Set the value in react-hook-form
-      form.trigger("resumeFile"); // Manually trigger validation for resumeFile
+      form.setValue("resumeFile", files[0]);
+      form.trigger("resumeFile");
     }
   };
   async function onSubmit(values: z.infer<typeof formSchema>) {
@@ -82,14 +81,14 @@ export default function UploadResume() {
       return;
     }
     setIsLoading(true);
-    // setUploadError(null);
+
     try {
       const responseData: ResponseData = await uploadResumeAndJobDescription(
         token,
         values.resumeFile,
         values.jobDescription
       );
-      // console.log("Uplaod succesfull", responseData);
+
       form.reset();
       toast.success("Analysis is ready! Redirecting to your results.");
 
@@ -100,18 +99,10 @@ export default function UploadResume() {
         (error as { response?: { data?: { error?: string } } })?.response?.data
           ?.error || "Failed to get result. Please try again.";
 
-      // setUploadError(errorMessage);
       toast.error(errorMessage);
     } finally {
       setIsLoading(false);
     }
-
-    // Do something with the form values.
-    // ✅ This will be type-safe and validated.
-
-    // console.log("Form values:", values);
-    // console.log("Resume File:", values.resumeFile);
-    // console.log("Job Description:", values.jobDescription);
   }
   return (
     <Form {...form}>
@@ -136,7 +127,6 @@ export default function UploadResume() {
                 <h1>Upload Your Resume</h1>
               </div>
 
-              {/* FormField for resumeFile */}
               <FormField
                 control={form.control}
                 name="resumeFile"
@@ -144,8 +134,7 @@ export default function UploadResume() {
                   <FormItem>
                     <FormControl>
                       <DragAndDropUpload
-                        onUploadComplete={handleResumeFileUpload} // Pass the handler
-                        // No need to pass resumeFile and setResumeFile as props directly for controlled input
+                        onUploadComplete={handleResumeFileUpload}
                       />
                     </FormControl>
                     <FormMessage />
@@ -160,7 +149,6 @@ export default function UploadResume() {
                 <h1>Add Job Description </h1>
               </div>
 
-              {/* FormField for jobDescription */}
               <FormField
                 control={form.control}
                 name="jobDescription"
@@ -170,9 +158,9 @@ export default function UploadResume() {
                       <Textarea
                         className="h-32 placeholder:text-neutral-700 p-2 border border-neutral-600"
                         placeholder="Copy and paste the job description here."
-                        {...field} // This will bind the Textarea to react-hook-form
+                        {...field}
                         onChange={(e) => {
-                          field.onChange(e); // Let react-hook-form handle its change
+                          field.onChange(e);
                         }}
                       />
                     </FormControl>
