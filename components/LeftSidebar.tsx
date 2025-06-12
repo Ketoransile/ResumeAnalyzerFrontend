@@ -1,5 +1,5 @@
 import { IResumeAnalysisResult } from "@/app/result/[id]/fetchResumeAnalysis";
-import { useMediaQuery } from "@react-hook/media-query";
+
 import {
   Accordion,
   AccordionContent,
@@ -7,6 +7,7 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { ResumeAnalysisCard } from "./ResumeAnalysisCard";
+import { useMediaQuery } from "@/hooks/useMediaQuery";
 const LeftSidebar = ({
   data,
   loadingAll,
