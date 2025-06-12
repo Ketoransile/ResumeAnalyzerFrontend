@@ -272,7 +272,7 @@ export default function ResumeAnalysisPage({
       ) : (
         <Accordion
           type="multiple"
-          className="w-full flex flex-col gap-4"
+          className="w-full flex flex-col gap-4 "
           defaultValue={[
             "item-1",
             "item-2",
@@ -467,18 +467,17 @@ export default function ResumeAnalysisPage({
         flex flex-col items-center justify-center gap-4
       "
               >
-                <div className="relative w-32 h-32 flex items-center justify-center">
+                {/* <div className="relative w-32 h-32 flex items-center justify-center">
                   <div className="absolute inset-0 rounded-full border-8 border-neutral-700"></div>
                   <div
                     className="absolute inset-0 rounded-full border-8 border-transparent"
                     style={{
-                      // Dynamic color based on score:
                       borderColor:
                         analysisData.keyword_match_score >= 80
-                          ? "rgb(163 230 53 / var(--tw-border-opacity))" /* lime-400 */
+                          ? "rgb(163 230 53 / var(--tw-border-opacity))"
                           : analysisData.keyword_match_score >= 50
-                          ? "rgb(251 191 36 / var(--tw-border-opacity))" /* amber-400 */
-                          : "rgb(252 165 165 / var(--tw-border-opacity))" /* red-300 */,
+                          ? "rgb(251 191 36 / var(--tw-border-opacity))"
+                          : "rgb(252 165 165 / var(--tw-border-opacity))",
                       borderLeftColor: "transparent",
                       borderTopColor: "transparent",
                       transform: `rotate(${
@@ -491,7 +490,12 @@ export default function ResumeAnalysisPage({
                   <p className="text-5xl font-extrabold text-lime-400 drop-shadow-lg">
                     {analysisData.keyword_match_score}%
                   </p>
-                </div>
+                </div> */}
+                <ScoreItem
+                  title="keyword Match Score"
+                  value={analysisData.keyword_match_score.toString()}
+                  isLarge={true}
+                />
 
                 <p className="text-center text-neutral-300 text-lg max-w-md">
                   This score reflects the percentage of key terms and skills
@@ -596,33 +600,37 @@ export default function ResumeAnalysisPage({
         flex flex-col items-center justify-center gap-4
       "
               >
-                <div className="relative w-32 h-32 flex items-center justify-center z-10">
+                {/* <div className="relative w-32 h-32 flex items-center justify-center z-10">
                   <div className="absolute inset-0 rounded-full border-8 border-neutral-700"></div>
                   <div
                     className="absolute inset-0 rounded-full border-8 border-transparent"
                     style={{
-                      // Dynamic color based on score:
+                    
                       borderColor:
                         analysisData.experience_relevance_score >= 80
-                          ? "rgb(52 211 153 / var(--tw-border-opacity))" /* teal-400 */
+                          ? "rgb(52 211 153 / var(--tw-border-opacity))" 
                           : analysisData.experience_relevance_score >= 50
-                          ? "rgb(251 191 36 / var(--tw-border-opacity))" /* amber-400 */
-                          : "rgb(252 165 165 / var(--tw-border-opacity))" /* red-300 */,
+                          ? "rgb(251 191 36 / var(--tw-border-opacity))" 
+                          : "rgb(252 165 165 / var(--tw-border-opacity))" ,
                       borderLeftColor: "transparent",
                       borderTopColor: "transparent",
                       transform: `rotate(${
                         (analysisData.experience_relevance_score / 100) * 360 +
                         90
-                      }deg)`, // Rotate to fill based on percentage
+                      }deg)`, 
                       transformOrigin: "center",
-                      transition: "transform 1s ease-out", // Smooth animation
+                      transition: "transform 1s ease-out", 
                     }}
                   ></div>
                   <p className="text-5xl font-extrabold text-teal-400 drop-shadow-lg">
                     {analysisData.experience_relevance_score}%
                   </p>
-                </div>
-
+                </div> */}
+                <ScoreItem
+                  title="Experience Relevance Score"
+                  value={analysisData.experience_relevance_score.toString()}
+                  isLarge={true}
+                />
                 <p className="text-center text-neutral-300 text-lg max-w-md">
                   This score assesses how well your past work history aligns
                   with the required experience in the job description.

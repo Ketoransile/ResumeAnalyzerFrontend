@@ -168,8 +168,11 @@ export const Header = () => {
   };
 
   return (
-    <div className="flex sticky border-b border-neutral-900 backdrop-blur-lg top-0 items-center justify-between py-4  px-4 sm:px-6 md:px-10  lg:px-20 z-100">
-      <Link href="/" className="text-2xl font-bold hover:scale-105">
+    <div className="flex sticky border-b border-neutral-900 backdrop-blur-2xl top-0 items-center justify-between py-4  px-4 sm:px-6 md:px-10  lg:px-20 z-100">
+      <Link
+        href="/"
+        className="text-lg md:text-xl lg:text-2xl font-bold hover:scale-105"
+      >
         Hired.ai
       </Link>
       <div className="flex items-center justify-center gap-10 text-sm text-neutral-400">
@@ -189,8 +192,8 @@ export const Header = () => {
           href="/result"
           className={`cursor-pointer transition-colors duration-200 ${
             pathname === "/result"
-              ? "text-neutral-300 font-bold" // Active color
-              : "text-neutral-500 hover:text-white" // Non-active color
+              ? "text-white font-bold" // Active color
+              : "text-neutral-400 hover:text-white" // Non-active color
           }`}
         >
           My Analyses
@@ -200,8 +203,8 @@ export const Header = () => {
           onClick={(e) => handleHeaderLinkClick(e, "footer-section")}
           className={`cursor-pointer transition-colors duration-200 ${
             pathname === homePagePath && activeSectionId === "footer-section"
-              ? "text-neutral-300 font-bold" // Active color
-              : "text-neutral-500 hover:text-white" // Non-active color
+              ? "text-white font-bold" // Active color
+              : "text-neutral-400 hover:text-white" // Non-active color
           }`}
         >
           About

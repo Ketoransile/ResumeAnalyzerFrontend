@@ -68,7 +68,7 @@ const DragAndDropUpload: React.FC<UploadProps> = ({
             : "border-neutral-500 bg-black hover:bg-black-100"
         }`}
       >
-        <input {...getInputProps()} />
+        <input {...getInputProps()} className="w-full" />
         <UploadCloud className="w-10 h-10 text-white mb-3" />
         <p className="text-neutral-400 pb-4">
           {isDragActive

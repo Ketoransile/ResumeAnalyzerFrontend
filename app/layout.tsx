@@ -26,8 +26,8 @@ export default function RootLayout({
           className={`${montserrat.className} antialiased  bg-black text-white`}
         >
           <Header />
-          {/* <main className="max-sm:px-2 sm:px-6 md:px-10  lg:px-20 "> */}
-          <main className="">
+          <main className="max-sm:px-2 sm:px-6 md:px-10  lg:px-20 ">
+            {/* <main className=""> */}
             {children}
             <Toaster />
           </main>
