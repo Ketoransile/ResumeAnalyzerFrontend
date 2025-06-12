@@ -26,7 +26,7 @@ const LeftSidebar = ({
       collapsible
       className={`${
         isResultPage ? "w-full  flex md:px-10 lg:px-20" : "xl:w-full"
-      } z-30 max-h-full `}
+      } z-30 max-h-full max-xl:-mt-4`}
     >
       {/* <Accordion
       type="single"

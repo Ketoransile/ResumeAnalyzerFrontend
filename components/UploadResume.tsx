@@ -115,7 +115,7 @@ export default function UploadResume() {
           <h1 className="text-2xl md:text-4xl font-extrabold text-white  text-center z-10">
             Check Your Resume Score
           </h1>
-          <h2 className="text-md text-center ">
+          <h2 className="text-sm   text-center w-full px-4 md:w-2/3 lg:w-1/2 ">
             We will check your resume score based on the job description
           </h2>
           <div className=" h-auto md:w-2/3 flex flex-col items-center justify-center gap-10">

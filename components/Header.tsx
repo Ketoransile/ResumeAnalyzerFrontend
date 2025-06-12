@@ -168,7 +168,7 @@ export const Header = () => {
   };
 
   return (
-    <div className="flex sticky border-b border-neutral-900 bg-black md:backdrop-blur-2xl top-0 items-center justify-between py-4  px-4 sm:px-6 md:px-10  lg:px-20 z-100">
+    <div className="flex sticky border-b border-neutral-900 max-md:bg-black md:backdrop-blur-2xl top-0 items-center justify-between py-4  px-4 sm:px-6 md:px-10  lg:px-20 z-100">
       <Link
         href="/"
         className="text-lg md:text-xl lg:text-2xl font-bold hover:scale-105"

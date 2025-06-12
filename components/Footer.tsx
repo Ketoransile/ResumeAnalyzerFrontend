@@ -9,7 +9,7 @@ export default function Footer() {
       <div className="w-full  grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 items-start gap-10 md:gap-20 lg:gap-32">
         {/* Brand and Description */}
         <div>
-          <h2 className="text-2xl font-bold text-white mb-2">
+          <h2 className="text-lg md:text-2xl font-bold text-white mb-2">
             AI Resume Analyzer
           </h2>
           <p className="text-sm leading-relaxed  text-neutral-400">
@@ -21,7 +21,9 @@ export default function Footer() {
 
         {/* Quick Links */}
         <div className="w-full">
-          <h3 className="text-lg font-semibold text-white mb-2">Quick Links</h3>
+          <h3 className="text-lg md-text-2xl font-semibold text-white mb-2">
+            Quick Links
+          </h3>
           <ul className="space-y-2 text-sm text-neutral-400">
             <li>
               <a href="/about" className="hover:underline">
@@ -48,7 +50,7 @@ export default function Footer() {
 
         {/* Contact & Social */}
         <div className="w-full">
-          <h3 className="text-lg font-semibold text-white mb-2">
+          <h3 className="text-lg md:text-2xl font-semibold text-white mb-2">
             Connect With Us
           </h3>
           <p className="text-sm mb-4 text-neutral-400">
