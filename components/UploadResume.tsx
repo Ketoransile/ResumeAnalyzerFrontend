@@ -112,14 +112,14 @@ export default function UploadResume() {
         id="upload-resume-form"
       >
         <div className="w-full flex flex-col items-center justify-center gap-6 pb-20">
-          <h1 className="text-3xl font-bold text-center">
+          <h1 className="text-2xl md:text-4xl font-extrabold text-white  text-center z-10">
             Check Your Resume Score
           </h1>
           <h2 className="text-md text-center ">
             We will check your resume score based on the job description
           </h2>
           <div className=" h-auto w-2/3 flex flex-col items-center justify-center gap-10">
-            <div className="w-full flex flex-col p-6 border border-neutral-800 rounded-xl">
+            <div className="w-full flex flex-col p-6 border border-neutral-600 rounded-xl">
               <div className="flex items-center gap-2">
                 <span className="bg-white rounded-full text-black w-6 h-6 flex items-center justify-center text-sm font-bold">
                   1
@@ -156,7 +156,7 @@ export default function UploadResume() {
                   <FormItem>
                     <FormControl>
                       <Textarea
-                        className="h-32 placeholder:text-neutral-700 p-2 border border-neutral-600"
+                        className="h-32 placeholder:text-neutral-500 p-2 border border-neutral-600"
                         placeholder="Copy and paste the job description here."
                         {...field}
                         onChange={(e) => {

@@ -4,9 +4,9 @@ export default function Footer() {
   return (
     <footer
       id="footer-section"
-      className="w-full  text-gray-300 pt-32 pb-6 mt-16 py-4  max-sm:px-2 sm:px-6 md:px-10  lg:px-20"
+      className="w-full  text-gray-300 pt-32 pb-6 mt-16 py-4  px-4 sm:px-6 md:px-10  lg:px-20"
     >
-      <div className="w-full  grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 items-start  gap-32">
+      <div className="w-full  grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 items-start gap-10 md:gap-20 lg:gap-32">
         {/* Brand and Description */}
         <div>
           <h2 className="text-2xl font-bold text-white mb-2">

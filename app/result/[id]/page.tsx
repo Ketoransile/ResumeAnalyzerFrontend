@@ -272,7 +272,7 @@ export default function ResumeAnalysisPage({
       ) : (
         <Accordion
           type="multiple"
-          className="w-3/4 flex flex-col gap-4"
+          className="w-full flex flex-col gap-4"
           defaultValue={[
             "item-1",
             "item-2",

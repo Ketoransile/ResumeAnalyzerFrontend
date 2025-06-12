@@ -59,7 +59,7 @@ const DragAndDropUpload: React.FC<UploadProps> = ({
   });
 
   return (
-    <div className="max-w-full  py-8 pr-4">
+    <div className="w-full  py-8 ">
       <div
         {...getRootProps()}
         className={`flex flex-col items-center justify-center border-2 border-dashed rounded-2xl p-10 text-center cursor-pointer transition-all duration-300 shadow-sm ${

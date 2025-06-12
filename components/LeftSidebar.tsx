@@ -17,15 +17,25 @@ const LeftSidebar = ({
   loadingAll: boolean;
   errorAll: string | null;
   onCardClick: (item: IResumeAnalysisResult) => void;
-  isResultPage?: boolean; 
+  isResultPage?: boolean;
 }) => {
   return (
     <Accordion
       type="single"
       defaultValue={"item-1"}
       collapsible
-      className={`${isResultPage ? "w-full  flex px-20" : "w-96"} min-h-full`}
+      className={`${
+        isResultPage ? "w-full  flex md:px-10 lg:px-20" : "xl:w-80"
+      }  max-h-full backdrop-blur-sm bg-neutral-900/50 border border-neutral-700 rounded-2xl shadow-xl shadow-neutral-950/50`}
     >
+      {/* <Accordion
+      type="single"
+      defaultValue={"item-1"}
+      collapsible
+      className={`${
+        isResultPage ? "w-full  flex md:px-10 lg:px-20" : "w-80"
+      } min-h-full`}
+    > */}
       <AccordionItem
         value="item-1"
         className="
@@ -44,7 +54,6 @@ const LeftSidebar = ({
         "
         >
           <span className="flex items-center gap-3">
-       
             <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 24 24"
@@ -65,7 +74,6 @@ const LeftSidebar = ({
 
         <AccordionContent className="pt-4">
           <div className="flex flex-col gap-3 max-h-[70vh] overflow-y-auto pr-2">
-           
             <style jsx>{`
               .overflow-y-auto::-webkit-scrollbar {
                 width: 8px;
@@ -94,9 +102,9 @@ const LeftSidebar = ({
             ) : data && data.length > 0 ? (
               data.map((item, index) => (
                 <ResumeAnalysisCard
-                  key={item._id || index} 
+                  key={item._id || index}
                   analysisData={item}
-                  onClick={() => onCardClick(item)} 
+                  onClick={() => onCardClick(item)}
                 />
               ))
             ) : (
