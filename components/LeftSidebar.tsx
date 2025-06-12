@@ -1,4 +1,5 @@
 import { IResumeAnalysisResult } from "@/app/result/[id]/fetchResumeAnalysis";
+import { useMediaQuery } from "@react-hook/media-query";
 import {
   Accordion,
   AccordionContent,
@@ -19,10 +20,12 @@ const LeftSidebar = ({
   onCardClick: (item: IResumeAnalysisResult) => void;
   isResultPage?: boolean;
 }) => {
+  const isXL = useMediaQuery("(min-width: 1280px)");
+  const isResultPageOrXL = isResultPage || isXL;
   return (
     <Accordion
       type="single"
-      defaultValue={"item-1"}
+      defaultValue={isResultPageOrXL ? "item-1" : ""}
       collapsible
       className={`${
         isResultPage ? "w-full  flex md:px-10 lg:px-20" : "xl:w-full"
@@ -104,7 +107,9 @@ const LeftSidebar = ({
                 <ResumeAnalysisCard
                   key={item._id || index}
                   analysisData={item}
-                  onClick={() => onCardClick(item)}
+                  onClick={() => {
+                    onCardClick(item);
+                  }}
                 />
               ))
             ) : (
