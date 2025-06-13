@@ -16,7 +16,7 @@ export const fetchAllResumeAnalysis = async ({
   token: string;
 }): Promise<IResumeAnalysisResult[]> => {
   try {
-    console.log("TOken from fetchALlAnalysis is ", token);
+    // console.log("TOken from fetchALlAnalysis is ", token);
     const response = await fetch(`${baseUrl}/api/v1/resume/getAllAnalyses`, {
       method: "GET",
       headers: {
