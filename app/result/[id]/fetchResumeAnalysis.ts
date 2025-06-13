@@ -42,7 +42,7 @@ const fetchResumeAnalysis = async ({
     const contentType = response.headers.get("content-type");
     if (!response.ok) {
       const errorText = await response.text();
-      console.error("Error response body:", errorText);
+      "Error response body:", errorText;
       throw new Error(
         `Server returned an error: ${response.status} ${response.statusText}`
       );
@@ -55,10 +55,10 @@ const fetchResumeAnalysis = async ({
     return parsed;
   } catch (error: unknown) {
     if (error instanceof Error) {
-      console.error("Error while fetching analysis:", error.message);
+      "Error while fetching analysis:", error.message;
       throw new Error(`Failed to fetch resume analysis: ${error.message}`);
     } else {
-      console.error("Unknown error while fetching analysis:", error);
+      "Unknown error while fetching analysis:", error;
       throw new Error(
         "An unknown error occurred while fetching resume analysis."
       );

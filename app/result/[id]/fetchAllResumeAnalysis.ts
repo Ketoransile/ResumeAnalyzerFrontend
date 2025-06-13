@@ -36,7 +36,6 @@ export const fetchAllResumeAnalysis = async ({
       } else {
         errorData = await response.text();
       }
-      console.error("Error response body: ", errorData);
       throw new Error(
         (typeof errorData === "object" &&
         errorData !== null &&
@@ -65,10 +64,8 @@ export const fetchAllResumeAnalysis = async ({
     return fullResponse.data;
   } catch (error) {
     if (error instanceof Error) {
-      console.error("Error while fetching analysis:", error.message);
       throw new Error(`Failed to fetch resume analysis: ${error.message}`);
     } else {
-      console.error("Unknown error while fetching analysis:", error);
       throw new Error(
         "An unknown error occurred while fetching resume analysis."
       );

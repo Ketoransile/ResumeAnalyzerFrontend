@@ -45,7 +45,6 @@ export default function LeftSidebarPage() {
         // console.log("All analyses fetched: ", results);
         setAllAnalysisData(results);
       } catch (error: unknown) {
-        console.error("Error while fetching all analyses data", error);
         if (
           typeof error === "object" &&
           error !== null &&

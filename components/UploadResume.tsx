@@ -94,7 +94,7 @@ export default function UploadResume() {
 
       router.push(`/result/${responseData?._id}`);
     } catch (error) {
-      console.error("Submission error:", error);
+      "Submission error:", error;
       const errorMessage =
         (error as { response?: { data?: { error?: string } } })?.response?.data
           ?.error || "Failed to get result. Please try again.";

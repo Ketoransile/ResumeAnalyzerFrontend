@@ -29,7 +29,7 @@ export const uploadResumeAndJobDescription = async (
     // console.log("analysis successfull:", result);
     return result;
   } catch (error: unknown) {
-    console.error("Anlaysis Error:", error);
+    "Anlaysis Error:", error;
     throw error;
   }
 };
