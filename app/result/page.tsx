@@ -47,7 +47,6 @@ export default function ResultPage() {
         // console.log("All analyses fetched: ", results);
         setAllAnalysisData(results);
       } catch (error: unknown) {
-        "Error while fetching all analyses data", error;
         if (error instanceof Error) {
           setErrorAll(error.message || "Failed to load all analyses");
         } else {
