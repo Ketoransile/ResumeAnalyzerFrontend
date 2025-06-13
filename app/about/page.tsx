@@ -20,10 +20,10 @@ const AboutPage = () => {
           Welcome to{" "}
           <strong className="font-semibold text-white">Hired.ai</strong>, the
           cutting-edge platform designed to revolutionize how job seekers tailor
-          their resumes and understand their fit for desired roles. In today's
-          competitive job market, simply having a great resume isn't enough – it
-          needs to speak directly to the job you're applying for. That's where
-          we come in.
+          their resumes and understand their fit for desired roles. In
+          today&apos;s competitive job market, simply having a great resume
+          isn&apos;t enough – it needs to speak directly to the job you&apos;re
+          applying for. That&apos;s where we come in.
         </p>
       </section>
 
@@ -37,8 +37,8 @@ const AboutPage = () => {
           analysis, identifying keywords, understanding subtle nuances in role
           requirements, and effectively showcasing your most relevant skills and
           experiences. Many qualified candidates miss opportunities simply
-          because their resume doesn't clearly highlight their suitability for a
-          specific position.
+          because their resume doesn&apos;t clearly highlight their suitability
+          for a specific position.
         </p>
       </section>
 
@@ -77,7 +77,7 @@ const AboutPage = () => {
               Get Instant Insights:
             </strong>{" "}
             Our GPT-4.1 powered engine goes to work, performing a deep,
-            contextual analysis. You'll receive:
+            contextual analysis. You&apos;ll receive:
             <ul className="list-disc list-inside ml-6 mt-2 space-y-1">
               <li>
                 A comprehensive{" "}

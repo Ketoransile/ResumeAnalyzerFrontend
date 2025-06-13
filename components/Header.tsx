@@ -102,11 +102,9 @@ import { Button } from "./ui/button";
 import { SignedIn, SignedOut, UserButton } from "@clerk/nextjs";
 import { usePathname } from "next/navigation";
 import { FiBarChart2 } from "react-icons/fi";
-import { useState, useEffect } from "react";
 
 export const Header = () => {
   const pathname = usePathname();
-  const homePagePath = "/";
 
   return (
     <div className="flex sticky border-b border-neutral-900 max-md:bg-black md:backdrop-blur-2xl top-0 items-center justify-between py-4  px-4 sm:px-6 md:px-10  lg:px-20 z-100">
@@ -141,7 +139,6 @@ export const Header = () => {
         </Link>
         <Link
           href="/about"
-          c
           className={`cursor-pointer transition-colors duration-200 ${
             pathname === "/about"
               ? "text-white font-bold" // Active color
