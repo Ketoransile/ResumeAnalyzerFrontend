@@ -7,7 +7,7 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { ResumeAnalysisCard } from "./ResumeAnalysisCard";
-import { useMediaQuery } from "@/hooks/useMediaQuery";
+
 const LeftSidebar = ({
   data,
   loadingAll,
@@ -21,16 +21,14 @@ const LeftSidebar = ({
   onCardClick: (item: IResumeAnalysisResult) => void;
   isResultPage?: boolean;
 }) => {
-  const isXL = useMediaQuery("(min-width: 1280px)");
-  const isResultPageOrXL = isResultPage || isXL;
   return (
     <Accordion
       type="single"
-      defaultValue={isResultPageOrXL ? "item-1" : ""}
+      defaultValue="item-1"
       collapsible
       className={`${
         isResultPage ? "w-full  flex md:px-10 lg:px-20" : "xl:w-full"
-      } z-30 max-h-full max-xl:-mt-4`}
+      } z-30  max-h-72 max-xl:border-b-4 rounded-2xl border-neutral-400 max-xl:shadow-2xl drop-shadow-2xl shadow-netral-200 overflow-auto xl:max-h-full max-xl:-mt-4 `}
     >
       {/* <Accordion
       type="single"
