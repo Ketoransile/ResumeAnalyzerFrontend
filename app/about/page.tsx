@@ -177,7 +177,7 @@ const AboutPage = () => {
         <p className="text-lg md:text-xl font-bold text-gray-200 mb-6">
           Ready to take control of your job search?
         </p>
-        <Button className="text-black font-bold py-6 bg-white px-8 rounded-full shadow-xl transition-all duration-300 ease-in-out transform hover:scale-105 active:scale-95 focus:outline-none focus:ring-4 focus:ring-gray-500">
+        <Button className="text-black font-bold hover:bg-neutral-400 hover:text-black py-6 bg-white px-8 rounded-full shadow-xl transition-all duration-300 ease-in-out transform hover:scale-105 active:scale-95 focus:outline-none focus:ring-4 focus:ring-gray-500">
           <Link href="/" className="inline-block  ">
             Try Hired.ai Now!
           </Link>
