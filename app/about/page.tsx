@@ -1,5 +1,6 @@
 // src/app/about/page.tsx or src/components/AboutPage.tsx
 
+import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import React from "react";
 
@@ -176,12 +177,11 @@ const AboutPage = () => {
         <p className="text-lg md:text-xl font-bold text-gray-200 mb-6">
           Ready to take control of your job search?
         </p>
-        <Link
-          href="/"
-          className="inline-block bg-gray-700 hover:bg-gray-600 text-white font-bold py-3 px-8 rounded-full shadow-xl transition-all duration-300 ease-in-out transform hover:scale-105 active:scale-95 focus:outline-none focus:ring-4 focus:ring-gray-500"
-        >
-          Try Hired.ai Now!
-        </Link>
+        <Button className="text-black font-bold py-6 bg-white px-8 rounded-full shadow-xl transition-all duration-300 ease-in-out transform hover:scale-105 active:scale-95 focus:outline-none focus:ring-4 focus:ring-gray-500">
+          <Link href="/" className="inline-block  ">
+            Try Hired.ai Now!
+          </Link>
+        </Button>
       </div>
     </div>
   );
