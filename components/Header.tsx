@@ -108,65 +108,6 @@ export const Header = () => {
   const pathname = usePathname();
   const homePagePath = "/";
 
-  const [activeSectionId, setActiveSectionId] = useState<string | null>(null);
-
-  useEffect(() => {
-    if (pathname !== homePagePath) {
-      setActiveSectionId(null);
-      return;
-    }
-
-    const sections = ["howItWorks", "footer-section"];
-
-    const observerOptions = {
-      root: null, // viewport
-      rootMargin: "0px",
-      threshold: 0.5,
-    };
-
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          setActiveSectionId(entry.target.id);
-        } else if (activeSectionId === entry.target.id) {
-        }
-      });
-    }, observerOptions);
-
-    sections.forEach((id) => {
-      const element = document.getElementById(id);
-      if (element) {
-        observer.observe(element);
-      }
-    });
-
-    return () => {
-      sections.forEach((id) => {
-        const element = document.getElementById(id);
-        if (element) {
-          observer.unobserve(element);
-        }
-      });
-    };
-  }, [pathname, activeSectionId]);
-
-  const handleHeaderLinkClick = (
-    e: React.MouseEvent<HTMLAnchorElement>,
-    sectionId: string
-  ) => {
-    const targetHref = e.currentTarget.getAttribute("href");
-    const targetPath = targetHref ? targetHref.split("#")[0] || "/" : "/";
-
-    if (pathname === targetPath && sectionId) {
-      e.preventDefault();
-      const targetElement = document.getElementById(sectionId);
-      if (targetElement) {
-        targetElement.scrollIntoView({ behavior: "smooth", block: "start" });
-        setActiveSectionId(sectionId); // Immediately set active section on click
-      }
-    }
-  };
-
   return (
     <div className="flex sticky border-b border-neutral-900 max-md:bg-black md:backdrop-blur-2xl top-0 items-center justify-between py-4  px-4 sm:px-6 md:px-10  lg:px-20 z-100">
       <Link
@@ -197,12 +138,12 @@ export const Header = () => {
           }`}
         >
           My Analyses
-        </Link>{" "}
+        </Link>
         <Link
-          href={`${homePagePath}#footer-section`}
-          onClick={(e) => handleHeaderLinkClick(e, "footer-section")}
+          href="/about"
+          c
           className={`cursor-pointer transition-colors duration-200 ${
-            pathname === homePagePath && activeSectionId === "footer-section"
+            pathname === "/about"
               ? "text-white font-bold" // Active color
               : "text-neutral-400 hover:text-white" // Non-active color
           }`}
