@@ -28,7 +28,7 @@
 //   return (
 //     <div className="flex sticky border-b border-neutral-900  backdrop-blur-lg  top-0  items-center justify-between py-4  max-sm:px-2 sm:px-6 md:px-10  lg:px-20 z-100">
 //       <Link href="/" className="text-2xl font-bold hover:scale-105">
-//         Hired.ai
+//         QuantumCV
 //       </Link>
 //       <div className="flex items-center justify-center gap-10 text-sm text-neutral-400 ">
 //         <Link
@@ -112,7 +112,7 @@ export const Header = () => {
         href="/"
         className="text-lg md:text-xl lg:text-2xl font-bold hover:scale-105"
       >
-        Hired.ai
+        QuantumCV
       </Link>
       <div className="flex items-center justify-center gap-10 text-sm text-neutral-400">
         {/* <Link

@@ -8,8 +8,8 @@ const AboutPage = () => {
   return (
     <div className="container mx-auto px-4 py-10 md:py-14 lg:py-16 max-w-4xl bg-black text-gray-100 rounded-lg shadow-lg">
       <h1 className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold text-center text-gray-100 mb-6 md:mb-10 leading-relaxed">
-        <span className="text-white">Hired.ai</span>: AI-Powered Resume Analyzer{" "}
-        <span className="text-purple-400">with GPT-4.1</span>
+        <span className="text-white">QuantumCV</span>: AI-Powered Resume
+        Analyzer <span className="text-purple-400">with GPT-4.1</span>
       </h1>
 
       <section className="mb-10 md:mb-14">
@@ -18,7 +18,7 @@ const AboutPage = () => {
         </h2>
         <p className="text-base text-gray-300 leading-relaxed mb-3">
           Welcome to{" "}
-          <strong className="font-semibold text-white">Hired.ai</strong>, the
+          <strong className="font-semibold text-white">QuantumCV</strong>, the
           cutting-edge platform designed to revolutionize how job seekers tailor
           their resumes and understand their fit for desired roles. In
           today&apos;s competitive job market, simply having a great resume
@@ -47,7 +47,7 @@ const AboutPage = () => {
           Our Solution: Intelligent Resume-to-Job Matching
         </h2>
         <p className="text-base text-gray-300 leading-relaxed mb-5">
-          <strong className="font-semibold text-white">Hired.ai</strong>{" "}
+          <strong className="font-semibold text-white">QuantumCV</strong>{" "}
           empowers you to bridge this gap with the power of advanced Artificial
           Intelligence. We utilize{" "}
           <strong className="font-semibold text-purple-400">GPT-4.1</strong>,
@@ -165,8 +165,8 @@ const AboutPage = () => {
           Our Vision
         </h2>
         <p className="text-base text-gray-300 leading-relaxed">
-          At <strong className="font-semibold text-white">Hired.ai</strong>, our
-          vision is to democratize career success by providing accessible,
+          At <strong className="font-semibold text-white">QuantumCV</strong>,
+          our vision is to democratize career success by providing accessible,
           intelligent tools that empower every job seeker. We believe that with
           the right insights, everyone can better articulate their value and
           connect with the opportunities they deserve.
@@ -179,7 +179,7 @@ const AboutPage = () => {
         </p>
         <Button className="text-black font-bold hover:bg-neutral-400 hover:text-black py-6 bg-white px-8 rounded-full shadow-xl transition-all duration-300 ease-in-out transform hover:scale-105 active:scale-95 focus:outline-none focus:ring-4 focus:ring-gray-500">
           <Link href="/" className="inline-block  ">
-            Try Hired.ai Now!
+            Try QuantumCV Now!
           </Link>
         </Button>
       </div>

@@ -10,9 +10,9 @@ const montserrat = Montserrat({
 });
 
 export const metadata: Metadata = {
-  title: "Hired.ai",
+  title: "QuantumCV",
   description:
-    "Hired.ai: Get your resume analyzed by our AI-powered tool with GPT-4.1. Instantly see your match score, skill gaps, and get actionable tips to land more interviews.",
+    "QuantumCV: Get your resume analyzed by our AI-powered tool with GPT-4.1. Instantly see your match score, skill gaps, and get actionable tips to land more interviews.",
 };
 
 export default function RootLayout({
