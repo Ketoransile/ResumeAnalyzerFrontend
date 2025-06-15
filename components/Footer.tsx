@@ -6,7 +6,7 @@ export default function Footer() {
       id="footer-section"
       className="w-full  text-gray-300 pt-32 pb-6 mt-16 py-4  px-4 sm:px-6 md:px-10  lg:px-20"
     >
-      <div className="w-full  grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 items-start gap-10 md:gap-20 lg:gap-32">
+      <div className="w-full  grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 items-start gap-6 md:gap-20 lg:gap-32">
         {/* Brand and Description */}
         <div>
           <h2 className="text-lg md:text-2xl font-bold text-white mb-2">
@@ -21,7 +21,7 @@ export default function Footer() {
 
         {/* Quick Links */}
         <div className="w-full">
-          <h3 className="text-lg md-text-2xl font-semibold text-white mb-2">
+          <h3 className="text-lg md:text-2xl font-semibold text-white mb-2">
             Quick Links
           </h3>
           <ul className="space-y-2 text-sm text-neutral-400">
