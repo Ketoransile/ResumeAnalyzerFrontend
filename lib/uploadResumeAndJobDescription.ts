@@ -19,7 +19,7 @@ export const uploadResumeAndJobDescription = async (
         Authorization: `Bearer ${token}`,
       },
     });
-    // console.log("response object from uplad resumeand description ", response);
+    console.log("response object from uplad resumeand description ", response);
     if (!response.ok) {
       const errorData = await response.json();
       throw new Error(errorData.message || "Upload failed");
