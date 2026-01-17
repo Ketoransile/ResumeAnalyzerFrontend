@@ -73,7 +73,7 @@ export default function HowItWorksSection() {
             2. Paste Job Details
           </h2>
           <p className="text-neutral-400 leading-relaxed max-w-xs">
-            Copy the job description you're targeting. Our AI uses this to benchmark your profile against the role.
+            Copy the job description you&apos;re targeting. Our AI uses this to benchmark your profile against the role.
           </p>
         </div>
 
