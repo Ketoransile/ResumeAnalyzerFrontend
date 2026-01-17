@@ -1,5 +1,5 @@
 "use client";
-import { Spotlight } from "@/components/ui/Spotlight";
+// import { Spotlight } from "@/components/ui/Spotlight";
 
 import { Hero } from "@/components/Hero";
 
