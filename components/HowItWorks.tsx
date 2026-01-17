@@ -24,7 +24,7 @@ export default function HowItWorksSection() {
                  bg-transparent ml-2 p-2 min-h-screen text-white px-4 md:px-0"
     >
       {/* Background Glows */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-7xl h-[600px] bg-indigo-500/5 rounded-full blur-3xl -z-10 pointer-events-none" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-7xl h-full md:h-[600px] bg-indigo-500/5 rounded-full blur-3xl -z-10 pointer-events-none" />
 
       <h1 className="text-3xl md:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-b from-white to-neutral-400 mb-20 text-center z-10">
         How It Works

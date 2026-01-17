@@ -5,7 +5,7 @@ import { Highlight } from "./ui/hero-highlight";
 export const Hero = () => {
   return (
     <div className=" flex flex-col gap-6 items-center justify-center pt-20 lg:pt-32">
-      <h1 className="w-2/3 text-2xl lg:text-4xl xl:text-6xl text-center font-bold leading-relaxed ">
+      <h1 className="w-full md:w-2/3 text-2xl lg:text-4xl xl:text-6xl text-center font-bold leading-relaxed ">
         AI Knows What Recruiters Want —{" "}
         <Highlight className="text-black dark:text-white">
           Does Your Resume?
