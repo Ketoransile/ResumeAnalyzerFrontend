@@ -18,7 +18,7 @@ export const Hero = () => {
       </h2>
       <p className="text-xs text-neutral-300 mt-2">
         Powered by cutting-edge{" "}
-        <span className="font-semibold">GPT-4.1 AI</span> technology.
+        <span className="font-semibold">GPT-5 AI</span> technology.
       </p>
       <Button
         className="py-6 bg-white text-black mt-6 hover:bg-neutral-400"

@@ -6,10 +6,10 @@ import React from "react";
 
 const AboutPage = () => {
   return (
-    <div className="container mx-auto px-4 py-10 md:py-14 lg:py-16 max-w-4xl bg-black text-gray-100 rounded-lg shadow-lg">
+    <div className="container mx-auto px-4 py-10 md:py-14 lg:py-16 max-w-4xl bg-transparent text-gray-100">
       <h1 className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold text-center text-gray-100 mb-6 md:mb-10 leading-relaxed">
-        <span className="text-white">QuantumCV</span>: AI-Powered Resume
-        Analyzer <span className="text-purple-400">with GPT-4.1</span>
+        <span className="text-white">ElevateCV</span>: AI-Powered Resume
+        Analyzer <span className="text-purple-400">with GPT-5</span>
       </h1>
 
       <section className="mb-10 md:mb-14">
@@ -18,7 +18,7 @@ const AboutPage = () => {
         </h2>
         <p className="text-base text-gray-300 leading-relaxed mb-3">
           Welcome to{" "}
-          <strong className="font-semibold text-white">QuantumCV</strong>, the
+          <strong className="font-semibold text-white">ElevateCV</strong>, the
           cutting-edge platform designed to revolutionize how job seekers tailor
           their resumes and understand their fit for desired roles. In
           today&apos;s competitive job market, simply having a great resume
@@ -47,10 +47,10 @@ const AboutPage = () => {
           Our Solution: Intelligent Resume-to-Job Matching
         </h2>
         <p className="text-base text-gray-300 leading-relaxed mb-5">
-          <strong className="font-semibold text-white">QuantumCV</strong>{" "}
+          <strong className="font-semibold text-white">ElevateCV</strong>{" "}
           empowers you to bridge this gap with the power of advanced Artificial
           Intelligence. We utilize{" "}
-          <strong className="font-semibold text-purple-400">GPT-4.1</strong>,
+          <strong className="font-semibold text-purple-400">GPT-5</strong>,
           the latest in large language model technology, to provide unparalleled
           insights into how well your resume aligns with any given job
           description.
@@ -76,7 +76,7 @@ const AboutPage = () => {
             <strong className="font-medium text-white">
               Get Instant Insights:
             </strong>{" "}
-            Our GPT-4.1 powered engine goes to work, performing a deep,
+            Our GPT-5 powered engine goes to work, performing a deep,
             contextual analysis. You&apos;ll receive:
             <ul className="list-disc list-inside ml-6 mt-2 space-y-1">
               <li>
@@ -154,7 +154,7 @@ const AboutPage = () => {
               Powered by Cutting-Edge AI:
             </strong>{" "}
             Leverage the advanced understanding and contextual reasoning
-            capabilities of GPT-4.1 to get the most accurate and nuanced
+            capabilities of GPT-5 to get the most accurate and nuanced
             feedback.
           </li>
         </ul>
@@ -165,7 +165,7 @@ const AboutPage = () => {
           Our Vision
         </h2>
         <p className="text-base text-gray-300 leading-relaxed">
-          At <strong className="font-semibold text-white">QuantumCV</strong>,
+          At <strong className="font-semibold text-white">ElevateCV</strong>,
           our vision is to democratize career success by providing accessible,
           intelligent tools that empower every job seeker. We believe that with
           the right insights, everyone can better articulate their value and
@@ -179,7 +179,7 @@ const AboutPage = () => {
         </p>
         <Button className="text-black font-bold hover:bg-neutral-400 hover:text-black py-6 bg-white px-8 rounded-full shadow-xl transition-all duration-300 ease-in-out transform hover:scale-105 active:scale-95 focus:outline-none focus:ring-4 focus:ring-gray-500">
           <Link href="/" className="inline-block  ">
-            Try QuantumCV Now!
+            Try ElevateCV Now!
           </Link>
         </Button>
       </div>

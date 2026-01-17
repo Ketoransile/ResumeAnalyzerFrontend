@@ -10,7 +10,7 @@ export default function Footer() {
         {/* Brand and Description */}
         <div>
           <h2 className="text-lg md:text-2xl font-bold text-white mb-2">
-            AI Resume Analyzer
+            ElevateCV
           </h2>
           <p className="text-sm leading-relaxed  text-neutral-400">
             Empower your job search with smart, AI-driven resume analysis. Get
@@ -75,7 +75,7 @@ export default function Footer() {
               <FaLinkedin className="text-xl hover:text-white" />
             </a>
             <a
-              href="hhttps://x.com/abdi_sileshi"
+              href="https://x.com/abdi_sileshi"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -86,8 +86,8 @@ export default function Footer() {
       </div>
 
       {/* Footer Bottom */}
-      <div className="mt-8 border-t border-neutral-700 pt-4 text-center text-xs text-neutral-500">
-        © {new Date().getFullYear()} AI Resume Analyzer. All rights reserved.
+      <div className="mt-8 border-t border-white/10 pt-4 text-center text-xs text-neutral-500">
+        © {new Date().getFullYear()} ElevateCV. All rights reserved.
       </div>
     </footer>
   );

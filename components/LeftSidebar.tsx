@@ -26,9 +26,8 @@ const LeftSidebar = ({
       type="single"
       defaultValue="item-1"
       collapsible
-      className={`${
-        isResultPage ? "w-full  flex md:px-10 lg:px-20" : "xl:w-full max-h-72"
-      } z-30   max-xl:border-b-4 rounded-2xl border-neutral-400 max-xl:shadow-2xl drop-shadow-2xl shadow-netral-200 overflow-auto xl:max-h-full max-xl:-mt-4 `}
+      className={`${isResultPage ? "w-full  flex md:px-10 lg:px-20" : "xl:w-full max-h-72"
+        } z-30   max-xl:border-b-4 rounded-2xl border-neutral-400 max-xl:shadow-2xl drop-shadow-2xl shadow-netral-200 overflow-auto xl:max-h-full max-xl:-mt-4 `}
     >
       {/* <Accordion
       type="single"
@@ -42,9 +41,10 @@ const LeftSidebar = ({
         value="item-1"
         className="
         w-full
-        bg-gradient-to-br from-neutral-900 to-neutral-800
-        border border-neutral-700 rounded-2xl p-5
-        shadow-xl shadow-neutral-950/50
+        bg-transparent
+        border-none
+        shadow-none
+        p-0
       "
       >
         <AccordionTrigger
@@ -122,7 +122,7 @@ const LeftSidebar = ({
           </div>
         </AccordionContent>
       </AccordionItem>
-    </Accordion>
+    </Accordion >
   );
 };
 export default LeftSidebar;

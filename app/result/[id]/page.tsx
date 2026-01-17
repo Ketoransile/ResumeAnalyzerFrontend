@@ -62,7 +62,7 @@ export default function ResumeAnalysisPage({
           error !== null &&
           "response" in error &&
           typeof (error as { response?: { status?: number } }).response ===
-            "object" &&
+          "object" &&
           (error as { response?: { status?: number } }).response &&
           ((error as { response: { status: number } }).response.status ===
             403 ||
@@ -83,7 +83,7 @@ export default function ResumeAnalysisPage({
           // For any other kind of error (e.g., network error, actual server bug)
           setError(
             (error as { message: string }).message ||
-              "Failed to load analysis. Please try again."
+            "Failed to load analysis. Please try again."
           );
         } else {
           setError("Failed to load analysis. Please try again.");
@@ -134,7 +134,7 @@ export default function ResumeAnalysisPage({
   //                     Score {data.overall_fit_score}%
   //                   </span>
   //                   <span className="w-fit p-1 px-2 rounded-full bg-blue-600">
-  //                     GPT-4.1
+  //                     GPT-5
   //                   </span>
   //                 </div>
   //               </div>
@@ -259,10 +259,10 @@ export default function ResumeAnalysisPage({
           <p className="mb-2">{error}</p>
           {error ===
             "You do not have permission to view this analysis or it does not exist." && (
-            <p className="text-sm text-neutral-400">
-              Please check the URL or select an analysis from your history.
-            </p>
-          )}
+              <p className="text-sm text-neutral-400">
+                Please check the URL or select an analysis from your history.
+              </p>
+            )}
         </div>
       ) : !analysisData ? (
         <div className="text-center text-neutral-400 text-lg p-8">
@@ -288,11 +288,11 @@ export default function ResumeAnalysisPage({
           <AccordionItem
             value="item-1"
             className="
-    bg-gradient-to-br from-neutral-900 to-neutral-800
-    border border-neutral-700 rounded-2xl p-5
-    shadow-xl shadow-neutral-950/50
+    bg-black/40 backdrop-blur-sm
+    border border-white/10 rounded-2xl p-5
+    shadow-xl shadow-neutral-950/20
     transition-all duration-300 ease-in-out
-    hover:border-neutral-600
+    hover:border-white/20
   "
           >
             <AccordionTrigger
@@ -331,7 +331,8 @@ export default function ResumeAnalysisPage({
             >
               <div
                 className="
-        bg-neutral-800/60 border border-neutral-700
+        bg-black/20 backdrop-blur-sm
+        border border-white/5
         rounded-xl p-5
         shadow-inner shadow-neutral-950/20
         flex flex-col items-center justify-center gap-6
@@ -418,11 +419,11 @@ export default function ResumeAnalysisPage({
           <AccordionItem
             value="item-2"
             className="
-    bg-gradient-to-br from-neutral-900 to-neutral-800
-    border border-neutral-700 rounded-2xl p-5
-    shadow-xl shadow-neutral-950/50
+    bg-black/40 backdrop-blur-sm
+    border border-white/10 rounded-2xl p-5
+    shadow-xl shadow-neutral-950/20
     transition-all duration-300 ease-in-out
-    hover:border-neutral-600
+    hover:border-white/20
   "
           >
             <AccordionTrigger
@@ -461,7 +462,8 @@ export default function ResumeAnalysisPage({
             >
               <div
                 className="
-        bg-neutral-800/60 border border-neutral-700
+        bg-black/20 backdrop-blur-sm
+        border border-white/5
         rounded-xl p-5
         shadow-inner shadow-neutral-950/20
         flex flex-col items-center justify-center gap-4
@@ -551,11 +553,11 @@ export default function ResumeAnalysisPage({
           <AccordionItem
             value="item-3"
             className="
-    bg-gradient-to-br from-neutral-900 to-neutral-800
-    border border-neutral-700 rounded-2xl p-5
-    shadow-xl shadow-neutral-950/50
+    bg-black/40 backdrop-blur-sm
+    border border-white/10 rounded-2xl p-5
+    shadow-xl shadow-neutral-950/20
     transition-all duration-300 ease-in-out
-    hover:border-neutral-600
+    hover:border-white/20
   "
           >
             <AccordionTrigger
@@ -594,7 +596,8 @@ export default function ResumeAnalysisPage({
             >
               <div
                 className="
-        bg-neutral-800/60 border border-neutral-700
+        bg-black/20 backdrop-blur-sm
+        border border-white/5
         rounded-xl p-5
         shadow-inner shadow-neutral-950/20
         flex flex-col items-center justify-center gap-4
@@ -670,11 +673,11 @@ export default function ResumeAnalysisPage({
           <AccordionItem
             value="item-4"
             className="
-    bg-gradient-to-br from-neutral-900 to-neutral-800
-    border border-neutral-700 rounded-2xl p-5
-    shadow-xl shadow-neutral-950/50
+    bg-black/40 backdrop-blur-sm
+    border border-white/10 rounded-2xl p-5
+    shadow-xl shadow-neutral-950/20
     transition-all duration-300 ease-in-out
-    hover:border-neutral-600
+    hover:border-white/20
   "
           >
             <AccordionTrigger
@@ -714,7 +717,8 @@ export default function ResumeAnalysisPage({
               {analysisData.top_matching_skills.length > 0 ? (
                 <div
                   className="
-          bg-neutral-800/60 border border-neutral-700
+          bg-black/20 backdrop-blur-sm
+          border border-white/5
           rounded-xl p-4
           shadow-inner shadow-neutral-950/20
         "
@@ -773,11 +777,11 @@ export default function ResumeAnalysisPage({
           <AccordionItem
             value="item-5"
             className="
-    bg-gradient-to-br from-neutral-900 to-neutral-800
-    border border-neutral-700 rounded-2xl p-5
-    shadow-xl shadow-neutral-950/50
+    bg-black/40 backdrop-blur-sm
+    border border-white/10 rounded-2xl p-5
+    shadow-xl shadow-neutral-950/20
     transition-all duration-300 ease-in-out
-    hover:border-neutral-600
+    hover:border-white/20
   "
           >
             <AccordionTrigger
@@ -817,7 +821,8 @@ export default function ResumeAnalysisPage({
               {analysisData.key_qualification_gaps.length > 0 ? (
                 <div
                   className="
-          bg-neutral-800/60 border border-neutral-700
+          bg-black/20 backdrop-blur-sm
+          border border-white/5
           rounded-xl p-4
           shadow-inner shadow-neutral-950/20
         "
@@ -892,11 +897,11 @@ export default function ResumeAnalysisPage({
           <AccordionItem
             value="item-6"
             className="
-    bg-gradient-to-br from-neutral-900 to-neutral-800
-    border border-neutral-700 rounded-2xl p-5
-    shadow-xl shadow-neutral-950/50
+    bg-black/40 backdrop-blur-sm
+    border border-white/10 rounded-2xl p-5
+    shadow-xl shadow-neutral-950/20
     transition-all duration-300 ease-in-out
-    hover:border-neutral-600
+    hover:border-white/20
   "
           >
             <AccordionTrigger
@@ -936,7 +941,8 @@ export default function ResumeAnalysisPage({
               {analysisData.actionable_enhancements.length > 0 ? (
                 <div
                   className="
-          bg-neutral-800/60 border border-neutral-700
+          bg-black/20 backdrop-blur-sm
+          border border-white/5
           rounded-xl p-4
           shadow-inner shadow-neutral-950/20
         "
@@ -1015,11 +1021,11 @@ export default function ResumeAnalysisPage({
           <AccordionItem
             value="item-7"
             className="
-    bg-gradient-to-br from-neutral-900 to-neutral-800
-    border border-neutral-700 rounded-2xl p-5
-    shadow-xl shadow-neutral-950/50
+    bg-black/40 backdrop-blur-sm
+    border border-white/10 rounded-2xl p-5
+    shadow-xl shadow-neutral-950/20
     transition-all duration-300 ease-in-out
-    hover:border-neutral-600
+    hover:border-white/20
   "
           >
             <AccordionTrigger
@@ -1057,7 +1063,8 @@ export default function ResumeAnalysisPage({
             >
               <div
                 className="
-        bg-neutral-800/60 border border-neutral-700
+        bg-black/20 backdrop-blur-sm
+        border border-white/5
         rounded-xl p-5
         shadow-inner shadow-neutral-950/20
         text-lg leading-relaxed text-neutral-200
@@ -1095,11 +1102,11 @@ export default function ResumeAnalysisPage({
           <AccordionItem
             value="item-8"
             className="
-    bg-gradient-to-br from-neutral-900 to-neutral-800
-    border border-neutral-700 rounded-2xl p-5
-    shadow-xl shadow-neutral-950/50
+    bg-black/40 backdrop-blur-sm
+    border border-white/10 rounded-2xl p-5
+    shadow-xl shadow-neutral-950/20
     transition-all duration-300 ease-in-out
-    hover:border-neutral-600
+    hover:border-white/20
   "
           >
             <AccordionTrigger
@@ -1139,7 +1146,8 @@ export default function ResumeAnalysisPage({
               {analysisData.relevant_interview_questions.length > 0 ? (
                 <div
                   className="
-          bg-neutral-800/60 border border-neutral-700
+          bg-black/20 backdrop-blur-sm
+          border border-white/5
           rounded-xl p-4
           shadow-inner shadow-neutral-950/20
         "
@@ -1216,11 +1224,11 @@ export default function ResumeAnalysisPage({
           <AccordionItem
             value="item-9"
             className="
-    bg-gradient-to-br from-neutral-900 to-neutral-800
-    border border-neutral-700 rounded-2xl p-5
-    shadow-xl shadow-neutral-950/50
+    bg-black/40 backdrop-blur-sm
+    border border-white/10 rounded-2xl p-5
+    shadow-xl shadow-neutral-950/20
     transition-all duration-300 ease-in-out
-    hover:border-neutral-600
+    hover:border-white/20
   "
           >
             <AccordionTrigger
@@ -1259,7 +1267,8 @@ export default function ResumeAnalysisPage({
               {analysisData.potential_red_flags.length > 0 ? (
                 <div
                   className="
-          bg-neutral-800/60 border border-neutral-700
+          bg-black/20 backdrop-blur-sm
+          border border-white/5
           rounded-xl p-4
           shadow-inner shadow-neutral-950/20
         "

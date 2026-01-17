@@ -43,7 +43,15 @@ export default function LeftSidebarPage() {
         // console.log("Fetching all analyses with token: ", token);
         const results = await fetchAllResumeAnalysis({ token });
         // console.log("All analyses fetched: ", results);
-        setAllAnalysisData(results);
+
+        // Sort the results so that the most recent ones (by createdAt) come first
+        const sortedResults = results.sort((a, b) => {
+          return (
+            new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime()
+          );
+        });
+
+        setAllAnalysisData(sortedResults);
       } catch (error: unknown) {
         if (
           typeof error === "object" &&
@@ -53,7 +61,7 @@ export default function LeftSidebarPage() {
         ) {
           setErrorAll(
             (error as { message: string }).message ||
-              "Failed to load all analyses"
+            "Failed to load all analyses"
           );
         } else {
           setErrorAll("Failed to load all analyses");

@@ -10,9 +10,9 @@ const montserrat = Montserrat({
 });
 
 export const metadata: Metadata = {
-  title: "QuantumCV",
+  title: "ElevateCV",
   description:
-    "QuantumCV: Get your resume analyzed by our AI-powered tool with GPT-4.1. Instantly see your match score, skill gaps, and get actionable tips to land more interviews.",
+    "ElevateCV: Get your resume analyzed by our AI-powered tool with GPT-5. Instantly see your match score, skill gaps, and get actionable tips to land more interviews.",
 };
 
 export default function RootLayout({
@@ -22,10 +22,16 @@ export default function RootLayout({
 }>) {
   return (
     <ClerkProvider>
-      <html lang="en">
+      <html lang="en" className="dark">
         <body
-          className={`${montserrat.className} antialiased  bg-black text-white`}
+          className={`${montserrat.className} antialiased bg-black text-white relative`}
         >
+          {/* Global Modern Background Gradient */}
+          <div className="fixed inset-0 w-full h-full bg-black -z-50 pointer-events-none">
+            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[500px] bg-indigo-500/20 rounded-full blur-[120px] opacity-50" />
+            <div className="absolute bottom-0 right-0 w-[800px] h-[600px] bg-purple-500/10 rounded-full blur-[100px] opacity-30" />
+          </div>
+
           <Header />
           <main className="max-sm:px-2 sm:px-6 md:px-10  lg:px-20 ">
             {/* <main className=""> */}

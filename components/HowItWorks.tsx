@@ -21,139 +21,83 @@ export default function HowItWorksSection() {
     <div
       id="howItWorks"
       className="relative flex flex-col items-center justify-center pt-20 pb-20
-                 bg-black min-h-screen text-white px-4 md:px-0"
+                 bg-transparent ml-2 p-2 min-h-screen text-white px-4 md:px-0"
     >
-      {/* Optional: Subtle background gradient/blob for depth */}
-      {/* <div className="w-full absolute inset-0 bg-neutral-900 pointer-events-none p-4 z-0"></div> */}
+      {/* Background Glows */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-7xl h-[600px] bg-indigo-500/5 rounded-full blur-3xl -z-10 pointer-events-none" />
 
-      <h1 className="text-2xl md:text-4xl font-extrabold text-white mb-16 text-center z-10">
+      <h1 className="text-3xl md:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-b from-white to-neutral-400 mb-20 text-center z-10">
         How It Works
       </h1>
 
       <div
-        className="relative z-10 flex flex-col md:flex-row items-center justify-center
-                     gap-8 md:gap-4 lg:gap-6 max-w-6xl mx-auto px-4" // Adjusted gaps: `md:gap-4` (16px), `lg:gap-6` (24px)
+        className="relative z-10 flex flex-col md:flex-row items-stretch justify-center
+                     gap-6 max-w-6xl mx-auto"
       >
         {/* Step 1: Upload Your Resume */}
         <div
-          className="flex flex-col items-center text-center p-6
-                     bg-neutral-800/70 rounded-xl shadow-xl border border-neutral-700
-                     w-full md:w-[calc((100%-2*16px)/3)] lg:w-[calc((100%-2*24px)/3)] min-h-[280px] hover:border-blue-500 transition-all duration-300" // Calculated width for 3 items + gaps
+          className="group flex flex-col items-center text-center p-8
+                     bg-neutral-900/50 backdrop-blur-sm rounded-3xl border border-white/10
+                     w-full md:w-1/3 min-h-[320px] 
+                     hover:border-indigo-500/50 hover:bg-neutral-900/80 hover:shadow-2xl hover:shadow-indigo-500/10 
+                     transition-all duration-500"
         >
-          <div className="bg-blue-600 rounded-full p-4 mb-4">
+          <div className="w-16 h-16 bg-gradient-to-br from-indigo-500 to-blue-600 rounded-2xl flex items-center justify-center mb-6 shadow-lg shadow-indigo-500/30 group-hover:scale-110 transition-transform duration-500">
             <AiOutlineUpload className="text-3xl text-white" />
           </div>
-          <h2 className="text-lg font-bold text-white mb-2">
+          <h2 className="text-xl font-bold text-white mb-4 group-hover:text-indigo-400 transition-colors">
             1. Upload Your Resume
           </h2>
-          <p className="text-sm text-neutral-300 max-w-xs">
-            Easily upload your resume to get started with your personalized AI
-            review.
+          <p className="text-neutral-400 leading-relaxed max-w-xs">
+            Drag and drop your PDF resume. Our secure system instantly processes your document for analysis.
           </p>
         </div>
 
         {/* Arrow/Separator for Desktop */}
-        <div className="hidden md:flex flex-col items-center justify-center text-neutral-400">
-          <svg
-            className="w-8 h-8" // Slightly smaller arrows to fit tighter gap
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth="2"
-              d="M17 8l4 4m0 0l-4 4m4-4H3"
-            ></path>
-          </svg>
-        </div>
-        {/* Arrow/Separator for Mobile (Vertical) - Still needed if they wrap to 1 column */}
-        <div className="md:hidden flex flex-col items-center justify-center text-neutral-400">
-          <svg
-            className="w-10 h-10"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth="2"
-              d="M12 17l4-4m-4 4l-4-4m4 4V3"
-            ></path>
-          </svg>
+        <div className="hidden md:flex flex-col items-center justify-center pt-12">
+          <svg className="w-6 h-6 text-neutral-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
         </div>
 
         {/* Step 2: Paste the Job Description */}
         <div
-          className="flex flex-col items-center text-center p-6
-                     bg-neutral-800/70 rounded-xl shadow-xl border border-neutral-700
-                     w-full md:w-[calc((100%-2*16px)/3)] lg:w-[calc((100%-2*24px)/3)] min-h-[280px] hover:border-purple-500 transition-all duration-300" // Calculated width for 3 items + gaps
+          className="group flex flex-col items-center text-center p-8
+                     bg-neutral-900/50 backdrop-blur-sm rounded-3xl border border-white/10
+                     w-full md:w-1/3 min-h-[320px] 
+                     hover:border-purple-500/50 hover:bg-neutral-900/80 hover:shadow-2xl hover:shadow-purple-500/10 
+                     transition-all duration-500"
         >
-          <div className="bg-purple-600 rounded-full p-4 mb-4">
+          <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-pink-600 rounded-2xl flex items-center justify-center mb-6 shadow-lg shadow-purple-500/30 group-hover:scale-110 transition-transform duration-500">
             <RiFileCopyLine className="text-3xl text-white" />
           </div>
-          <h2 className="text-lg font-bold text-white mb-2">
-            2. Paste the Job Description
+          <h2 className="text-xl font-bold text-white mb-4 group-hover:text-purple-400 transition-colors">
+            2. Paste Job Details
           </h2>
-          <p className="text-sm text-neutral-300 max-w-xs">
-            Add the job details effortlessly to tailor your resume analysis for
-            the specific role.
+          <p className="text-neutral-400 leading-relaxed max-w-xs">
+            Copy the job description you're targeting. Our AI uses this to benchmark your profile against the role.
           </p>
         </div>
 
         {/* Arrow/Separator for Desktop */}
-        <div className="hidden md:flex flex-col items-center justify-center text-neutral-400">
-          <svg
-            className="w-8 h-8" // Slightly smaller arrows to fit tighter gap
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth="2"
-              d="M17 8l4 4m0 0l-4 4m4-4H3"
-            ></path>
-          </svg>
-        </div>
-        {/* Arrow/Separator for Mobile (Vertical) */}
-        <div className="md:hidden flex flex-col items-center justify-center text-neutral-400">
-          <svg
-            className="w-10 h-10"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth="2"
-              d="M12 17l4-4m-4 4l-4-4m4 4V3"
-            ></path>
-          </svg>
+        <div className="hidden md:flex flex-col items-center justify-center pt-12">
+          <svg className="w-6 h-6 text-neutral-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
         </div>
 
         {/* Step 3: Optimize Your Resume */}
         <div
-          className="flex flex-col items-center text-center p-6
-                     bg-neutral-800/70 rounded-xl shadow-xl border border-neutral-700
-                     w-full md:w-[calc((100%-2*16px)/3)] lg:w-[calc((100%-2*24px)/3)] min-h-[280px] hover:border-green-500 transition-all duration-300" // Calculated width for 3 items + gaps
+          className="group flex flex-col items-center text-center p-8
+                     bg-neutral-900/50 backdrop-blur-sm rounded-3xl border border-white/10
+                     w-full md:w-1/3 min-h-[320px] 
+                     hover:border-emerald-500/50 hover:bg-neutral-900/80 hover:shadow-2xl hover:shadow-emerald-500/10 
+                     transition-all duration-500"
         >
-          <div className="bg-green-600 rounded-full p-4 mb-4">
+          <div className="w-16 h-16 bg-gradient-to-br from-emerald-500 to-green-600 rounded-2xl flex items-center justify-center mb-6 shadow-lg shadow-emerald-500/30 group-hover:scale-110 transition-transform duration-500">
             <MdOutlineTipsAndUpdates className="text-3xl text-white" />
           </div>
-          <h2 className="text-lg font-bold text-white mb-2">
-            3. Optimize Your Resume
+          <h2 className="text-xl font-bold text-white mb-4 group-hover:text-emerald-400 transition-colors">
+            3. Get Actionable Feedback
           </h2>
-          <p className="text-sm text-neutral-300 max-w-xs">
-            Receive personalized tips instantly to make your resume stand out.
+          <p className="text-neutral-400 leading-relaxed max-w-xs">
+            Receive a detailed score, missing keywords, and tailored suggestions to triple your interview chances.
           </p>
         </div>
       </div>

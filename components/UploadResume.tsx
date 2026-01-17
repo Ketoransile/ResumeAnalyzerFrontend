@@ -118,74 +118,81 @@ export default function UploadResume() {
             We will check your resume score based on the job description
           </h2>
           <div className=" max-md:px-4 h-auto md:w-2/3 flex flex-col items-center justify-center gap-10">
-            <div className="w-full flex flex-col p-6 border border-neutral-800 rounded-xl">
-              <div className="flex items-center gap-2">
-                <span className="bg-white rounded-full text-black w-6 h-6 flex items-center justify-center text-sm font-bold">
-                  1
-                </span>
-                <h1>Upload Your Resume</h1>
-              </div>
+            <div className="relative group w-full flex flex-col p-8 border border-white/10 rounded-3xl bg-neutral-900/50 backdrop-blur-sm overflow-hidden">
+              {/* Border Gradient Animation */}
+              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-indigo-500/10 to-transparent group-hover:via-indigo-500/20 transition-all duration-500" />
 
-              <FormField
-                control={form.control}
-                name="resumeFile"
-                render={() => (
-                  <FormItem>
-                    <FormControl>
-                      <DragAndDropUpload
-                        onUploadComplete={handleResumeFileUpload}
-                      />
-                    </FormControl>
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />
-
-              <div className="h-auto flex items-center gap-2 py-8">
-                <span className="bg-white rounded-full text-black w-6 h-6 flex items-center justify-center text-sm font-bold">
-                  2
-                </span>
-                <h1>Add Job Description </h1>
-              </div>
-
-              <FormField
-                control={form.control}
-                name="jobDescription"
-                render={({ field }) => (
-                  <FormItem>
-                    <FormControl>
-                      <Textarea
-                        className="h-32 placeholder:text-neutral-500 p-2 border border-neutral-600"
-                        placeholder="Copy and paste the job description here."
-                        {...field}
-                        onChange={(e) => {
-                          field.onChange(e);
-                        }}
-                      />
-                    </FormControl>
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />
-
-              <Button
-                type="submit"
-                disabled={isLoading}
-                className="bg-white py-4 px-12 mt-8 text-black w-fit self-center hover:bg-neutral-400 cursor-pointer disabled:bg-neutral-400"
-              >
-                {isLoading ? (
-                  <div className="flex gap-2 ">
-                    <Loader2Icon className="animate-spin" />
-                    <h1 className="text-sm">Please wait</h1>
+              <div className="relative z-10">
+                <div className="flex items-center gap-4 mb-8">
+                  <div className="bg-indigo-600 rounded-xl text-white w-10 h-10 flex items-center justify-center text-lg font-bold shadow-lg shadow-indigo-500/30">
+                    1
                   </div>
-                ) : (
-                  "Get Result"
-                )}
-              </Button>
+                  <h1 className="text-xl font-bold">Upload Your Resume</h1>
+                </div>
+
+                <FormField
+                  control={form.control}
+                  name="resumeFile"
+                  render={() => (
+                    <FormItem>
+                      <FormControl>
+                        <DragAndDropUpload
+                          onUploadComplete={handleResumeFileUpload}
+                        />
+                      </FormControl>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
+
+                <div className="h-px w-full bg-gradient-to-r from-transparent via-white/10 to-transparent my-10" />
+
+                <div className="flex items-center gap-4 mb-6">
+                  <span className="bg-indigo-600 rounded-xl text-white w-10 h-10 flex items-center justify-center text-lg font-bold shadow-lg shadow-indigo-500/30">
+                    2
+                  </span>
+                  <h1 className="text-xl font-bold">Paste Job Description</h1>
+                </div>
+
+                <FormField
+                  control={form.control}
+                  name="jobDescription"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormControl>
+                        <Textarea
+                          className="h-32 placeholder:text-neutral-500 p-2 border border-neutral-600"
+                          placeholder="Copy and paste the job description here."
+                          {...field}
+                          onChange={(e) => {
+                            field.onChange(e);
+                          }}
+                        />
+                      </FormControl>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
+
+                <Button
+                  type="submit"
+                  disabled={isLoading}
+                  className="bg-white hover:bg-neutral-200 text-black font-bold py-6 px-16 rounded-full mt-8 w-fit self-center transition-all duration-300 transform hover:scale-105 shadow-xl shadow-indigo-500/20 disabled:opacity-50 disabled:hover:scale-100"
+                >
+                  {isLoading ? (
+                    <div className="flex gap-2 ">
+                      <Loader2Icon className="animate-spin" />
+                      <h1 className="text-sm">Please wait</h1>
+                    </div>
+                  ) : (
+                    "Get Result"
+                  )}
+                </Button>
+              </div>
             </div>
           </div>
         </div>
       </form>
-    </Form>
+    </Form >
   );
 }
