@@ -20,8 +20,8 @@ export default function HowItWorksSection() {
   return (
     <div
       id="howItWorks"
-      className="relative flex flex-col items-center justify-center pt-20 pb-20
-                 bg-transparent ml-2 p-2 min-h-screen text-white px-4 md:px-0"
+      className="relative flex flex-col items-center justify-center py-20
+                 bg-transparent w-full text-white px-4 md:px-0"
     >
       {/* Background Glows */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-7xl h-full md:h-[600px] bg-indigo-500/5 rounded-full blur-3xl -z-10 pointer-events-none" />

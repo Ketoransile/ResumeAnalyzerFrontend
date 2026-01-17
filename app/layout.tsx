@@ -3,6 +3,7 @@ import { Montserrat } from "next/font/google";
 import "./globals.css";
 import { Header } from "@/components/Header";
 import { ClerkProvider } from "@clerk/nextjs";
+import { dark } from "@clerk/themes";
 import Footer from "@/components/Footer";
 import { Toaster } from "@/components/ui/sonner";
 const montserrat = Montserrat({
@@ -21,7 +22,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <ClerkProvider>
+    <ClerkProvider appearance={{ baseTheme: dark }}>
       <html lang="en" className="dark">
         <body
           className={`${montserrat.className} antialiased bg-black text-white relative`}
@@ -29,7 +30,7 @@ export default function RootLayout({
           {/* Global Modern Background Gradient */}
           <div className="fixed inset-0 w-full h-full bg-black -z-50 pointer-events-none">
             <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[500px] bg-indigo-500/20 rounded-full blur-[120px] opacity-50" />
-            <div className="absolute bottom-0 right-0 w-[800px] h-[600px] bg-purple-500/10 rounded-full blur-[100px] opacity-30" />
+            <div className="absolute bottom-0 right-0 w-[300px] h-[300px] md:w-[800px] md:h-[600px] bg-purple-500/10 rounded-full blur-[100px] opacity-30" />
           </div>
 
           <Header />

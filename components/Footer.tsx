@@ -4,7 +4,7 @@ export default function Footer() {
   return (
     <footer
       id="footer-section"
-      className="w-full  text-gray-300 pt-32 pb-6 mt-16 py-4  px-4 sm:px-6 md:px-10  lg:px-20"
+      className="w-full bg-black relative z-10 text-gray-300 pt-32 pb-6 mt-16 py-4 px-4 sm:px-6 md:px-10 lg:px-20"
     >
       <div className="w-full  grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 items-start gap-6 md:gap-20 lg:gap-32">
         {/* Brand and Description */}

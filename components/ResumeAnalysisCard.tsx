@@ -43,11 +43,10 @@ export const ResumeAnalysisCard = ({
     transition-all duration-200 ease-in-out
     cursor-pointer
     
-    ${
-      activeCard
-        ? "bg-blue-950/40 border-blue-500 text-blue-100 shadow-lg shadow-blue-500/20" // Active: very dark blue background tint, prominent blue border, light blue text, subtle blue glow
-        : "bg-neutral-800/40 border-neutral-700 text-neutral-300 shadow-sm hover:border-neutral-600 hover:shadow-md" // Default: translucent dark background, neutral border, neutral text, subtle shadow, border/shadow hover
-    }
+    ${activeCard
+          ? "bg-indigo-900/20 backdrop-blur-md border-indigo-500/50 text-white shadow-lg shadow-indigo-500/10" // Active styling
+          : "bg-neutral-900/40 backdrop-blur-sm border-white/5 text-neutral-300 shadow-sm hover:bg-neutral-900/60 hover:border-white/10 hover:text-white hover:shadow-md" // Default styling
+        }
   `}
       onClick={onClick} // Makes the entire card clickable
     >
