@@ -26,7 +26,7 @@ export default function HowItWorksSection() {
       {/* Background Glows */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-7xl h-full md:h-[600px] bg-indigo-500/5 rounded-full blur-3xl -z-10 pointer-events-none" />
 
-      <h1 className="text-3xl md:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-b from-white to-neutral-400 mb-20 text-center z-10">
+      <h1 className="text-3xl md:text-5xl font-bold text-white mb-20 text-center z-10">
         How It Works
       </h1>
 
@@ -42,7 +42,7 @@ export default function HowItWorksSection() {
                      hover:border-indigo-500/50 hover:bg-neutral-900/80 hover:shadow-2xl hover:shadow-indigo-500/10 
                      transition-all duration-500"
         >
-          <div className="w-16 h-16 bg-gradient-to-br from-indigo-500 to-blue-600 rounded-2xl flex items-center justify-center mb-6 shadow-lg shadow-indigo-500/30 group-hover:scale-110 transition-transform duration-500">
+          <div className="w-16 h-16 bg-indigo-600 rounded-2xl flex items-center justify-center mb-6 shadow-lg shadow-indigo-500/30 group-hover:scale-110 transition-transform duration-500">
             <AiOutlineUpload className="text-3xl text-white" />
           </div>
           <h2 className="text-xl font-bold text-white mb-4 group-hover:text-indigo-400 transition-colors">
@@ -66,7 +66,7 @@ export default function HowItWorksSection() {
                      hover:border-purple-500/50 hover:bg-neutral-900/80 hover:shadow-2xl hover:shadow-purple-500/10 
                      transition-all duration-500"
         >
-          <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-pink-600 rounded-2xl flex items-center justify-center mb-6 shadow-lg shadow-purple-500/30 group-hover:scale-110 transition-transform duration-500">
+          <div className="w-16 h-16 bg-purple-600 rounded-2xl flex items-center justify-center mb-6 shadow-lg shadow-purple-500/30 group-hover:scale-110 transition-transform duration-500">
             <RiFileCopyLine className="text-3xl text-white" />
           </div>
           <h2 className="text-xl font-bold text-white mb-4 group-hover:text-purple-400 transition-colors">
@@ -90,7 +90,7 @@ export default function HowItWorksSection() {
                      hover:border-emerald-500/50 hover:bg-neutral-900/80 hover:shadow-2xl hover:shadow-emerald-500/10 
                      transition-all duration-500"
         >
-          <div className="w-16 h-16 bg-gradient-to-br from-emerald-500 to-green-600 rounded-2xl flex items-center justify-center mb-6 shadow-lg shadow-emerald-500/30 group-hover:scale-110 transition-transform duration-500">
+          <div className="w-16 h-16 bg-emerald-600 rounded-2xl flex items-center justify-center mb-6 shadow-lg shadow-emerald-500/30 group-hover:scale-110 transition-transform duration-500">
             <MdOutlineTipsAndUpdates className="text-3xl text-white" />
           </div>
           <h2 className="text-xl font-bold text-white mb-4 group-hover:text-emerald-400 transition-colors">

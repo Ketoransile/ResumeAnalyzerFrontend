@@ -119,8 +119,8 @@ export default function UploadResume() {
           </h2>
           <div className=" max-md:px-4 h-auto md:w-2/3 flex flex-col items-center justify-center gap-10">
             <div className="relative group w-full flex flex-col p-8 border border-white/10 rounded-3xl bg-neutral-900/50 backdrop-blur-sm overflow-hidden">
-              {/* Border Gradient Animation */}
-              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-indigo-500/10 to-transparent group-hover:via-indigo-500/20 transition-all duration-500" />
+              {/* Background Highlight */}
+              <div className="absolute inset-0 bg-neutral-900/50 group-hover:bg-neutral-800/50 transition-all duration-500" />
 
               <div className="relative z-10">
                 <div className="flex items-center gap-4 mb-8">
@@ -145,7 +145,7 @@ export default function UploadResume() {
                   )}
                 />
 
-                <div className="h-px w-full bg-gradient-to-r from-transparent via-white/10 to-transparent my-10" />
+                <div className="h-px w-full bg-neutral-800 my-10" />
 
                 <div className="flex items-center gap-4 mb-6">
                   <span className="bg-indigo-600 rounded-xl text-white w-10 h-10 flex items-center justify-center text-lg font-bold shadow-lg shadow-indigo-500/30">

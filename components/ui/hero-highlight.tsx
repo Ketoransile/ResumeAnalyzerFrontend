@@ -63,18 +63,10 @@ export const HeroHighlight = ({
         style={{
           backgroundImage: dotPatterns.light.hover,
           WebkitMaskImage: useMotionTemplate`
-            radial-gradient(
-              200px circle at ${mouseX}px ${mouseY}px,
-              black 0%,
-              transparent 100%
-            )
+            circle(200px at ${mouseX}px ${mouseY}px)
           `,
           maskImage: useMotionTemplate`
-            radial-gradient(
-              200px circle at ${mouseX}px ${mouseY}px,
-              black 0%,
-              transparent 100%
-            )
+            circle(200px at ${mouseX}px ${mouseY}px)
           `,
         }}
       />
@@ -83,18 +75,10 @@ export const HeroHighlight = ({
         style={{
           backgroundImage: dotPatterns.dark.hover,
           WebkitMaskImage: useMotionTemplate`
-            radial-gradient(
-              200px circle at ${mouseX}px ${mouseY}px,
-              black 0%,
-              transparent 100%
-            )
+            circle(200px at ${mouseX}px ${mouseY}px)
           `,
           maskImage: useMotionTemplate`
-            radial-gradient(
-              200px circle at ${mouseX}px ${mouseY}px,
-              black 0%,
-              transparent 100%
-            )
+            circle(200px at ${mouseX}px ${mouseY}px)
           `,
         }}
       />
@@ -130,7 +114,7 @@ export const Highlight = ({
         display: "inline",
       }}
       className={cn(
-        `relative inline-block rounded-lg bg-gradient-to-r from-indigo-300 to-purple-300 px-1 pb-1 dark:from-indigo-500 dark:to-purple-500`,
+        `relative inline-block rounded-lg bg-indigo-300 px-1 pb-1 dark:bg-indigo-500`,
         className
       )}
     >

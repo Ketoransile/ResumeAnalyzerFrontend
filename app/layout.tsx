@@ -27,11 +27,8 @@ export default function RootLayout({
         <body
           className={`${montserrat.className} antialiased bg-black text-white relative`}
         >
-          {/* Global Modern Background Gradient */}
-          <div className="fixed inset-0 w-full h-full bg-black -z-50 pointer-events-none">
-            <div className="hidden md:block absolute top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[500px] bg-indigo-500/20 rounded-full blur-[120px] opacity-50" />
-            <div className="hidden md:block absolute bottom-0 right-0 w-[800px] h-[600px] bg-purple-500/10 rounded-full blur-[100px] opacity-30" />
-          </div>
+          {/* Global Background */}
+          <div className="fixed inset-0 w-full h-full bg-black -z-50 pointer-events-none" />
 
           <Header />
           <main className="max-sm:px-2 sm:px-6 md:px-10  lg:px-20 ">

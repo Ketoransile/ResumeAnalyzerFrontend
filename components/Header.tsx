@@ -36,10 +36,10 @@ export const Header = () => {
       <div className="flex items-center justify-between px-4 py-4 sm:px-6 md:px-10 lg:px-20">
         {/* Brand */}
         <Link href="/" className="relative z-50 flex items-center gap-2 group">
-          <div className="h-8 w-8 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-lg flex items-center justify-center shadow-lg shadow-indigo-500/20 ring-1 ring-white/20">
+          <div className="h-8 w-8 bg-indigo-600 rounded-lg flex items-center justify-center shadow-lg shadow-indigo-500/20 ring-1 ring-white/20">
             <span className="text-white font-bold text-lg">E</span>
           </div>
-          <span className="text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-white via-neutral-200 to-neutral-400 group-hover:to-white transition-all duration-300">
+          <span className="text-xl font-bold text-white group-hover:text-neutral-200 transition-all duration-300">
             ElevateCV
           </span>
         </Link>

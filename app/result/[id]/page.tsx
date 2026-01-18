@@ -744,7 +744,7 @@ export default function ResumeAnalysisPage({
                 <div
                   className="
           flex flex-col items-center gap-4
-          bg-gradient-to-br from-blue-900/30 to-blue-900/10
+          bg-blue-900/20
           border border-blue-700 rounded-xl p-6
           shadow-md shadow-blue-950/20
         "
@@ -864,7 +864,7 @@ export default function ResumeAnalysisPage({
                 <div
                   className="
           flex flex-col items-center gap-4
-          bg-gradient-to-br from-green-900/30 to-green-900/10
+          bg-green-900/20
           border border-green-700 rounded-xl p-6
           shadow-md shadow-green-950/20
         "
@@ -988,7 +988,7 @@ export default function ResumeAnalysisPage({
                 <div
                   className="
           flex flex-col items-center gap-4
-          bg-gradient-to-br from-green-900/30 to-green-900/10
+          bg-green-900/20
           border border-green-700 rounded-xl p-6
           shadow-md shadow-green-950/20
         "
@@ -1084,11 +1084,11 @@ export default function ResumeAnalysisPage({
                 <div className="mt-4 pt-4 border-t border-neutral-700/50 flex flex-wrap gap-3">
                   <button
                     className="
-            bg-gradient-to-r from-purple-600 to-fuchsia-600
+            bg-purple-600 hover:bg-purple-700
             text-white font-semibold py-2.5 px-5
             rounded-full shadow-lg hover:shadow-xl
             transition-all duration-300 transform
-            hover:scale-105 hover:from-purple-700 hover:to-fuchsia-700
+            hover:scale-105
             focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-opacity-75
           "
                   >
@@ -1192,7 +1192,7 @@ export default function ResumeAnalysisPage({
                 <div
                   className="
           flex flex-col items-center gap-4
-          bg-gradient-to-br from-neutral-800/60 to-neutral-800/30
+          bg-neutral-800/40
           border border-neutral-700 rounded-xl p-6
           shadow-md shadow-neutral-950/20
         "
@@ -1315,11 +1315,11 @@ export default function ResumeAnalysisPage({
                     <div className="flex flex-wrap gap-3">
                       <button
                         className="
-                bg-gradient-to-r from-orange-600 to-amber-600
+                bg-orange-600 hover:bg-orange-700
                 text-white font-semibold py-2.5 px-5
                 rounded-full shadow-lg hover:shadow-xl
                 transition-all duration-300 transform
-                hover:scale-105 hover:from-orange-700 hover:to-amber-700
+                hover:scale-105
                 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-opacity-75
               "
                       >
@@ -1343,7 +1343,7 @@ export default function ResumeAnalysisPage({
                 <div
                   className="
           flex flex-col items-center gap-4
-          bg-gradient-to-br from-green-900/30 to-green-900/10
+          bg-green-900/20
           border border-green-700 rounded-xl p-6
           shadow-md shadow-green-950/20
         "
