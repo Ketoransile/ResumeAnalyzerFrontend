@@ -2,22 +2,27 @@
 @import "tw-animate-css";
 
 @custom-variant dark (&:is(.dark *));
+
 @theme inline {
   --animate-spotlight: spotlight 2s ease 0.75s 1 forwards;
 }
+
 @utility grid-cols-auto {
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
 }
+
 @keyframes spotlight {
   0% {
     opacity: 0;
     transform: translate(-72%, -62%) scale(0.5);
   }
+
   100% {
     opacity: 1;
     transform: translate(-50%, -40%) scale(1);
   }
 }
+
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
@@ -131,7 +136,14 @@
   * {
     @apply border-border outline-ring/50;
   }
+
   body {
     @apply bg-background text-foreground;
+  }
+}
+
+@media (max-width: 768px) {
+  .cl-cardBox {
+    box-shadow: none !important;
   }
 }
