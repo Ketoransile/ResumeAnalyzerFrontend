@@ -110,7 +110,7 @@ export default function UploadResume() {
         onSubmit={form.handleSubmit(onSubmit)}
         id="upload-resume-form"
       >
-        <div className="w-full flex flex-col items-center justify-center gap-6 pb-20">
+        <div id="upload" className="w-full flex flex-col items-center justify-center gap-6 pb-20">
           <h1 className="text-2xl md:text-4xl font-extrabold text-white  text-center z-10">
             Check Your Resume Score
           </h1>
