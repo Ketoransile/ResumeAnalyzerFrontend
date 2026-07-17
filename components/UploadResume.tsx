@@ -110,24 +110,27 @@ export default function UploadResume() {
         onSubmit={form.handleSubmit(onSubmit)}
         id="upload-resume-form"
       >
-        <div id="upload" className="w-full flex flex-col items-center justify-center gap-6 pb-20">
-          <h1 className="text-2xl md:text-4xl font-extrabold text-white  text-center z-10">
+        <div id="upload" className="w-full flex flex-col items-center justify-center gap-8 pb-24 pt-8">
+          <h2 className="text-3xl md:text-5xl font-extrabold text-white text-center font-display tracking-tight">
             Check Your Resume Score
-          </h1>
-          <h2 className="text-sm   text-center w-full px-4 md:w-2/3 lg:w-1/2 ">
-            We will check your resume score based on the job description
           </h2>
-          <div className=" max-md:px-4 h-auto md:w-2/3 flex flex-col items-center justify-center gap-10">
-            <div className="relative group w-full flex flex-col p-8 border border-white/10 rounded-3xl bg-neutral-900/50 backdrop-blur-sm overflow-hidden">
-              {/* Background Highlight */}
-              <div className="absolute inset-0 bg-neutral-900/50 group-hover:bg-neutral-800/50 transition-all duration-500" />
+          <p className="text-neutral-400 text-sm md:text-base text-center max-w-xl px-4 mt-1">
+            Benchmark your resume against any target role in seconds. Get instant match scores, skill gap analysis, and tailored suggestions.
+          </p>
+          
+          <div className="max-md:px-2 h-auto w-full md:w-4/5 lg:w-2/3 flex flex-col items-center justify-center gap-10 mt-6">
+            <div className="relative w-full flex flex-col p-8 md:p-12 border border-white/5 rounded-2xl bg-neutral-950/40 backdrop-blur-md overflow-hidden shadow-2xl">
+              {/* Radial gradient glow in background */}
+              <div className="absolute top-0 right-0 w-[200px] h-[200px] bg-indigo-500/5 rounded-full blur-[80px] pointer-events-none" />
+              <div className="absolute bottom-0 left-0 w-[200px] h-[200px] bg-purple-500/5 rounded-full blur-[80px] pointer-events-none" />
 
-              <div className="relative z-10">
-                <div className="flex items-center gap-4 mb-8">
-                  <div className="bg-indigo-600 rounded-xl text-white w-10 h-10 flex items-center justify-center text-lg font-bold shadow-lg shadow-indigo-500/30">
+              <div className="relative z-10 flex flex-col">
+                {/* Step 1 */}
+                <div className="flex items-center gap-3.5 mb-6">
+                  <div className="bg-gradient-to-tr from-indigo-600 to-purple-600 rounded-xl text-white w-9 h-9 flex items-center justify-center text-base font-bold shadow-md shadow-indigo-500/20 ring-1 ring-white/10">
                     1
                   </div>
-                  <h1 className="text-xl font-bold">Upload Your Resume</h1>
+                  <h3 className="text-xl font-bold tracking-tight text-white font-display">Upload Your Resume</h3>
                 </div>
 
                 <FormField
@@ -140,18 +143,19 @@ export default function UploadResume() {
                           onUploadComplete={handleResumeFileUpload}
                         />
                       </FormControl>
-                      <FormMessage />
+                      <FormMessage className="text-red-400 mt-2 text-xs" />
                     </FormItem>
                   )}
                 />
 
-                <div className="h-px w-full bg-neutral-800 my-10" />
+                <div className="h-px w-full bg-white/5 my-8" />
 
-                <div className="flex items-center gap-4 mb-6">
-                  <span className="bg-indigo-600 rounded-xl text-white w-10 h-10 flex items-center justify-center text-lg font-bold shadow-lg shadow-indigo-500/30">
+                {/* Step 2 */}
+                <div className="flex items-center gap-3.5 mb-6">
+                  <div className="bg-gradient-to-tr from-indigo-600 to-purple-600 rounded-xl text-white w-9 h-9 flex items-center justify-center text-base font-bold shadow-md shadow-indigo-500/20 ring-1 ring-white/10">
                     2
-                  </span>
-                  <h1 className="text-xl font-bold">Paste Job Description</h1>
+                  </div>
+                  <h3 className="text-xl font-bold tracking-tight text-white font-display">Paste Job Description</h3>
                 </div>
 
                 <FormField
@@ -161,33 +165,35 @@ export default function UploadResume() {
                     <FormItem>
                       <FormControl>
                         <Textarea
-                          className="h-32 placeholder:text-neutral-500 p-2 border border-neutral-600"
-                          placeholder="Copy and paste the job description here."
+                          className="min-h-[140px] bg-neutral-900/30 backdrop-blur-xs placeholder:text-neutral-500 p-4 border border-white/10 focus-visible:border-indigo-500/80 focus-visible:ring-1 focus-visible:ring-indigo-500/80 rounded-xl text-white transition-all text-sm resize-none"
+                          placeholder="Copy and paste the job description here..."
                           {...field}
                           onChange={(e) => {
                             field.onChange(e);
                           }}
                         />
                       </FormControl>
-                      <FormMessage />
+                      <FormMessage className="text-red-400 mt-2 text-xs" />
                     </FormItem>
                   )}
                 />
 
-                <Button
-                  type="submit"
-                  disabled={isLoading}
-                  className="bg-white hover:bg-neutral-200 text-black font-bold py-6 px-16 rounded-full mt-8 w-fit self-center transition-all duration-300 transform hover:scale-105 shadow-xl shadow-indigo-500/20 disabled:opacity-50 disabled:hover:scale-100"
-                >
-                  {isLoading ? (
-                    <div className="flex gap-2 ">
-                      <Loader2Icon className="animate-spin" />
-                      <h1 className="text-sm">Please wait</h1>
-                    </div>
-                  ) : (
-                    "Get Result"
-                  )}
-                </Button>
+                <div className="flex justify-center mt-10">
+                  <Button
+                    type="submit"
+                    disabled={isLoading}
+                    className="bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-500 hover:to-purple-500 text-white font-bold py-6 px-16 rounded-full transition-all duration-300 transform hover:scale-103 shadow-lg shadow-indigo-600/20 hover:shadow-indigo-600/40 disabled:opacity-50 disabled:hover:scale-100 border-0 cursor-pointer flex items-center justify-center gap-2.5"
+                  >
+                    {isLoading ? (
+                      <>
+                        <Loader2Icon className="animate-spin w-5 h-5" />
+                        <span className="text-base font-bold">Analyzing Resume...</span>
+                      </>
+                    ) : (
+                      <span className="text-base font-bold">Get My Result</span>
+                    )}
+                  </Button>
+                </div>
               </div>
             </div>
           </div>

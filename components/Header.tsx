@@ -32,14 +32,14 @@ export const Header = () => {
   }, [isMobileMenuOpen]);
 
   return (
-    <nav className="sticky top-0 z-50 w-full border-b border-white/5 bg-black/80 backdrop-blur-xl supports-[backdrop-filter]:bg-black/70">
-      <div className="flex items-center justify-between px-4 py-4 sm:px-6 md:px-10 lg:px-20">
+    <nav className="fixed top-6 left-1/2 -translate-x-1/2 z-50 w-[90%] max-w-6xl border border-white/10 bg-black/60 backdrop-blur-xl rounded-2xl shadow-2xl shadow-black/80 transition-all duration-300">
+      <div className="flex items-center justify-between px-6 py-3">
         {/* Brand */}
-        <Link href="/" className="relative z-50 flex items-center gap-2 group">
-          <div className="h-8 w-8 bg-indigo-600 rounded-lg flex items-center justify-center shadow-lg shadow-indigo-500/20 ring-1 ring-white/20">
-            <span className="text-white font-bold text-lg">E</span>
+        <Link href="/" className="relative z-50 flex items-center gap-2.5 group">
+          <div className="h-9 w-9 bg-gradient-to-tr from-indigo-600 to-purple-600 rounded-xl flex items-center justify-center shadow-lg shadow-indigo-500/25 ring-1 ring-white/10 group-hover:scale-105 transition-transform duration-300">
+            <span className="text-white font-black text-lg">E</span>
           </div>
-          <span className="text-xl font-bold text-white group-hover:text-neutral-200 transition-all duration-300">
+          <span className="text-xl font-bold tracking-tight text-white group-hover:text-neutral-200 transition-all duration-300 font-display">
             ElevateCV
           </span>
         </Link>
@@ -49,28 +49,22 @@ export const Header = () => {
           <Link
             href="/about"
             className={cn(
-              "text-sm font-medium transition-all duration-200 hover:text-white relative",
-              pathname === "/about" ? "text-white" : "text-neutral-400"
+              "text-sm font-medium tracking-wide transition-all duration-200 hover:text-white relative py-1 px-2 rounded-md hover:bg-white/5",
+              pathname === "/about" ? "text-white bg-white/5" : "text-neutral-400"
             )}
           >
             About
-            {pathname === "/about" && (
-              <span className="absolute -bottom-1 left-0 right-0 h-0.5 bg-indigo-500 rounded-full" />
-            )}
           </Link>
 
           <SignedIn>
             <Link
               href="/result"
               className={cn(
-                "text-sm font-medium transition-all duration-200 hover:text-white relative",
-                pathname === "/result" ? "text-white" : "text-neutral-400"
+                "text-sm font-medium tracking-wide transition-all duration-200 hover:text-white relative py-1 px-2 rounded-md hover:bg-white/5",
+                pathname === "/result" ? "text-white bg-white/5" : "text-neutral-400"
               )}
             >
               My Analyses
-              {pathname === "/result" && (
-                <span className="absolute -bottom-1 left-0 right-0 h-0.5 bg-indigo-500 rounded-full" />
-              )}
             </Link>
           </SignedIn>
 
@@ -96,13 +90,13 @@ export const Header = () => {
             <SignedOut>
               <Button
                 variant="ghost"
-                className="text-neutral-300 hover:text-white hover:bg-white/10"
+                className="text-neutral-300 hover:text-white hover:bg-white/5 text-sm font-medium"
                 asChild
               >
                 <Link href="/sign-in">Sign In</Link>
               </Button>
               <Button
-                className="bg-white text-black hover:bg-neutral-200 transition-colors font-medium"
+                className="bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-500 hover:to-purple-500 text-white transition-all duration-300 font-semibold shadow-lg shadow-indigo-600/30 px-5 rounded-xl hover:scale-102 border-0"
                 asChild
               >
                 <Link href="/sign-up">Get Started</Link>
@@ -114,10 +108,10 @@ export const Header = () => {
         {/* Mobile Toggle */}
         <button
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          className="md:hidden relative z-50 p-2 -mr-2 text-neutral-400 hover:text-white transition-colors"
+          className="md:hidden relative z-50 p-2 text-neutral-400 hover:text-white transition-colors rounded-lg hover:bg-white/5"
           aria-label="Toggle menu"
         >
-          {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+          {isMobileMenuOpen ? <X size={22} /> : <Menu size={22} />}
         </button>
       </div>
 
@@ -128,14 +122,14 @@ export const Header = () => {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
-            transition={{ duration: 0.3, ease: "easeInOut" }}
-            className="md:hidden border-t border-white/10 bg-black overflow-hidden"
+            transition={{ duration: 0.25, ease: "easeInOut" }}
+            className="md:hidden border-t border-white/10 bg-neutral-950/95 backdrop-blur-2xl rounded-b-2xl overflow-hidden"
           >
-            <div className="flex flex-col p-4 gap-2 pb-8">
+            <div className="flex flex-col p-4 gap-2 pb-6">
               <Link
                 href="/about"
                 className={cn(
-                  "flex items-center justify-between p-4 rounded-xl text-base font-medium transition-colors",
+                  "flex items-center justify-between p-3.5 rounded-xl text-base font-medium transition-colors",
                   pathname === "/about"
                     ? "bg-white/10 text-white"
                     : "text-neutral-400 hover:bg-white/5 hover:text-white"
@@ -147,7 +141,7 @@ export const Header = () => {
                 <Link
                   href="/result"
                   className={cn(
-                    "flex items-center justify-between p-4 rounded-xl text-base font-medium transition-colors",
+                    "flex items-center justify-between p-3.5 rounded-xl text-base font-medium transition-colors",
                     pathname === "/result"
                       ? "bg-white/10 text-white"
                       : "text-neutral-400 hover:bg-white/5 hover:text-white"
@@ -161,7 +155,7 @@ export const Header = () => {
               <div className="my-2 border-t border-white/10" />
 
               <SignedIn>
-                <div className="flex items-center gap-3 p-4">
+                <div className="flex items-center gap-3 p-3">
                   <UserButton afterSignOutUrl="/" />
                   <div className="flex flex-col">
                     <span className="text-sm font-medium text-white">
@@ -178,13 +172,13 @@ export const Header = () => {
                 <div className="grid grid-cols-2 gap-3 mt-2">
                   <Button
                     variant="outline"
-                    className="w-full justify-center h-12 text-base font-medium border-white/10 bg-transparent text-white hover:bg-white/5 hover:text-white"
+                    className="w-full justify-center h-11 text-sm font-medium border-white/10 bg-transparent text-white hover:bg-white/5"
                     asChild
                   >
                     <Link href="/sign-in">Sign In</Link>
                   </Button>
                   <Button
-                    className="w-full justify-center h-12 text-base font-medium bg-white text-black hover:bg-neutral-200"
+                    className="w-full justify-center h-11 text-sm font-semibold bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-500 hover:to-purple-500 text-white shadow-lg shadow-indigo-600/30 border-0"
                     asChild
                   >
                     <Link href="/sign-up">Get Started</Link>
