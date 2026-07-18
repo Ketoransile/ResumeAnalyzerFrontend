@@ -2,8 +2,6 @@
 import React, { useCallback, useState } from "react";
 import { useDropzone, FileRejection } from "react-dropzone";
 import { UploadCloud, FileText } from "lucide-react";
-import { Button } from "./ui/button";
-// import { uploadFiles } from "@/lib/uploadFiles";
 
 interface UploadProps {
   onUploadComplete?: (files: File[]) => void;
@@ -27,8 +25,7 @@ const DragAndDropUpload: React.FC<UploadProps> = ({
         onUploadComplete(acceptedFiles);
       }
       try {
-        // console.log(acceptedFiles);
-        // await uploadFiles(acceptedFiles); // ✅ calling upload function
+        // upload logic handled by parent
       } catch (err: unknown) {
         if (err instanceof Error) {
           setUploadError(err.message || "Something went wrong during upload.");
@@ -53,63 +50,67 @@ const DragAndDropUpload: React.FC<UploadProps> = ({
     maxFiles,
     maxSize,
     accept: {
-      // "image/*": [".jpeg", ".jpg", ".png", ".gif"],
       "application/pdf": [".pdf"],
     },
   });
 
   return (
-    <div className="w-full py-4">
+    <div className="w-full py-2">
       <div
         {...getRootProps()}
-        className={`flex flex-col items-center justify-center border-2 border-dashed rounded-2xl p-10 text-center cursor-pointer transition-all duration-300 shadow-sm ${
+        className={`group flex flex-col items-center justify-center border-2 border-dashed rounded-2xl p-10 text-center cursor-pointer transition-all duration-300 ${
           isDragActive
-            ? "border-indigo-500 bg-indigo-500/5 shadow-xl shadow-indigo-500/5"
-            : "border-white/10 bg-neutral-900/25 hover:bg-neutral-900/40 hover:border-white/20 hover:shadow-lg"
+            ? "border-violet-500/40 bg-violet-500/5 shadow-xl shadow-violet-500/5"
+            : "border-white/8 bg-white/[0.015] hover:bg-white/[0.03] hover:border-white/15"
         }`}
       >
         <input {...getInputProps()} className="w-full" />
-        <UploadCloud className={`w-10 h-10 mb-3 transition-all duration-300 ${isDragActive ? "text-indigo-400 scale-110" : "text-neutral-400"}`} />
-        <p className="text-sm text-neutral-400 pb-4 font-medium">
+        <UploadCloud
+          className={`w-8 h-8 mb-3 transition-all duration-300 ${
+            isDragActive
+              ? "text-violet-400 scale-110"
+              : "text-neutral-600 group-hover:text-neutral-400"
+          }`}
+        />
+        <p className="text-sm text-neutral-500 pb-3 font-light">
           {isDragActive
-            ? "Drop your resume PDF here..."
-            : "Drag & drop your resume (PDF) here or click to browse"}
+            ? "Drop your PDF here…"
+            : "Drag & drop your resume here, or click to browse"}
         </p>
-        <Button className="bg-white/5 hover:bg-white/10 text-white font-semibold border border-white/10 rounded-xl px-5 py-2 pointer-events-none text-xs">
-          Select Resume File
-        </Button>
+        <span className="text-[10px] text-neutral-700 font-medium uppercase tracking-widest pointer-events-none">
+          PDF · Max 5MB
+        </span>
       </div>
 
       {uploadError && (
-        <div className="text-red-400 mt-4 p-4 bg-red-950/20 border border-red-900/30 rounded-xl text-sm whitespace-pre-line shadow-sm">
+        <div className="text-red-400/90 mt-3 p-3 bg-red-500/5 border border-red-500/12 rounded-xl text-xs whitespace-pre-line font-light">
           {uploadError}
         </div>
       )}
 
       {files.length > 0 && (
-        <div className="mt-6 animate-fade-in">
-          <h4 className="font-bold text-xs uppercase tracking-wider mb-3 text-neutral-400">
-            Selected Resume
-          </h4>
+        <div className="mt-4">
           <ul className="space-y-2">
             {files.map((file) => (
               <li
                 key={file.name}
-                className="flex items-center justify-between bg-neutral-900/40 border border-white/5 p-4 rounded-xl shadow-md"
+                className="flex items-center justify-between bg-white/[0.02] border border-white/6 p-3.5 rounded-xl"
               >
                 <div className="flex items-center gap-3">
-                  <div className="bg-indigo-500/10 p-2 rounded-lg text-indigo-400">
-                    <FileText className="w-5 h-5" />
+                  <div className="w-9 h-9 bg-violet-500/10 rounded-lg flex items-center justify-center ring-1 ring-violet-500/15">
+                    <FileText className="w-4 h-4 text-violet-400" />
                   </div>
                   <div className="flex flex-col">
-                    <span className="text-white text-sm font-semibold">{file.name}</span>
-                    <span className="text-xs text-neutral-500">
-                      {(file.size / 1024).toFixed(2)} KB
+                    <span className="text-white text-sm font-medium">
+                      {file.name}
+                    </span>
+                    <span className="text-[11px] text-neutral-600">
+                      {(file.size / 1024).toFixed(1)} KB
                     </span>
                   </div>
                 </div>
-                <span className="text-xs font-bold text-emerald-400 bg-emerald-500/10 px-2.5 py-1.5 rounded-full border border-emerald-500/20">
-                  Ready for Analysis
+                <span className="text-[10px] font-bold text-emerald-400 bg-emerald-500/8 border border-emerald-500/15 px-2.5 py-1 rounded-full uppercase tracking-widest">
+                  Ready
                 </span>
               </li>
             ))}

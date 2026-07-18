@@ -2,21 +2,21 @@ export const KeySkillsCard = ({ title }: { title: string }) => {
   return (
     <div
       className="
-        flex items-center gap-2
-        bg-emerald-600 text-white 
-        rounded-full px-4 py-2.5 
-        font-semibold // Make the text bolder
-        shadow-lg shadow-emerald-700/50 
-        hover:bg-emerald-700 hover:shadow-xl hover:shadow-emerald-800/60 
-        transition-all duration-200 ease-in-out
-        cursor-pointer
+        inline-flex items-center gap-2
+        bg-emerald-500/10 text-emerald-300
+        border border-emerald-500/20
+        rounded-full px-4 py-2
+        text-sm font-medium
+        hover:bg-emerald-500/15 hover:border-emerald-500/30
+        transition-all duration-200
+        cursor-default
       "
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 20 20"
         fill="currentColor"
-        className="w-4 h-4 text-emerald-100" // Icon color adjusted for better contrast
+        className="w-3.5 h-3.5 text-emerald-400 flex-shrink-0"
       >
         <path
           fillRule="evenodd"
@@ -24,7 +24,7 @@ export const KeySkillsCard = ({ title }: { title: string }) => {
           clipRule="evenodd"
         />
       </svg>
-      <span className="text-sm whitespace-nowrap">{title}</span>
+      <span className="whitespace-nowrap">{title}</span>
     </div>
   );
 };

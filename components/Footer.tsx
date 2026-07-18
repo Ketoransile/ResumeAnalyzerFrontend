@@ -4,90 +4,108 @@ export default function Footer() {
   return (
     <footer
       id="footer-section"
-      className="w-full bg-black relative z-10 text-gray-300 pt-32 pb-6 mt-16 py-4 px-4 sm:px-6 md:px-10 lg:px-20"
+      className="w-full relative z-10 pt-20 pb-8 mt-8 px-4 sm:px-6 md:px-10 lg:px-20"
     >
-      <div className="w-full  grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 items-start gap-6 md:gap-20 lg:gap-32">
-        {/* Brand and Description */}
-        <div>
-          <h2 className="text-lg md:text-2xl font-bold text-white mb-2">
-            ElevateCV
-          </h2>
-          <p className="text-sm leading-relaxed  text-neutral-400">
-            Empower your job search with smart, AI-driven resume analysis. Get
-            actionable feedback, keyword matching, and job-specific optimization
-            in seconds.
+      {/* Top border glow */}
+      <div className="w-full h-px bg-gradient-to-r from-transparent via-white/8 to-transparent mb-16" />
+
+      <div className="w-full grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-16 mb-14">
+        {/* Brand */}
+        <div className="md:col-span-1">
+          <div className="flex items-center gap-2.5 mb-4">
+            <div className="h-8 w-8 rounded-xl bg-gradient-to-br from-violet-600 to-indigo-600 flex items-center justify-center shadow-lg shadow-violet-500/20">
+              <span className="text-white font-black text-sm">E</span>
+            </div>
+            <span className="text-white font-bold text-lg tracking-tight">ElevateCV</span>
+          </div>
+          <p className="text-sm text-neutral-600 leading-relaxed font-light max-w-[260px]">
+            <em className="not-italic text-neutral-500">AI-powered resume intelligence</em> that
+            tells you exactly what a recruiter sees — and how to change it.
           </p>
+
+          {/* Social icons */}
+          <div className="flex items-center gap-3 mt-6">
+            {[
+              { href: "https://github.com/Ketoransile", Icon: FaGithub, label: "GitHub" },
+              { href: "https://www.linkedin.com/in/abdi-sileshi-56710a2a6/", Icon: FaLinkedin, label: "LinkedIn" },
+              { href: "https://x.com/abdi_sileshi", Icon: FaTwitter, label: "Twitter/X" },
+            ].map(({ href, Icon, label }) => (
+              <a
+                key={label}
+                href={href}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={label}
+                className="w-9 h-9 rounded-xl border border-white/8 bg-white/3 flex items-center justify-center text-neutral-600 hover:text-white hover:border-white/15 hover:bg-white/6 transition-all duration-200"
+              >
+                <Icon className="text-sm" />
+              </a>
+            ))}
+          </div>
         </div>
 
         {/* Quick Links */}
-        <div className="w-full">
-          <h3 className="text-lg md:text-2xl font-semibold text-white mb-2">
-            Quick Links
+        <div>
+          <h3 className="text-xs font-bold uppercase tracking-[0.18em] text-neutral-600 mb-5">
+            Product
           </h3>
-          <ul className="space-y-2 text-sm text-neutral-400">
-            <li>
-              <a href="/about" className="hover:underline">
-                About Us
-              </a>
-            </li>
-            <li>
-              <a href="/faq" className="hover:underline">
-                FAQ
-              </a>
-            </li>
-            <li>
-              <a href="/privacy" className="hover:underline">
-                Privacy Policy
-              </a>
-            </li>
-            <li>
-              <a href="/terms" className="hover:underline">
-                Terms of Service
+          <ul className="space-y-3">
+            {[
+              { href: "/about", label: "About" },
+              { href: "/#howItWorks", label: "How it works" },
+              { href: "/#upload-resume-form", label: "Analyze resume" },
+            ].map(({ href, label }) => (
+              <li key={label}>
+                <a
+                  href={href}
+                  className="text-sm text-neutral-600 hover:text-neutral-200 transition-colors duration-200 font-light"
+                >
+                  {label}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        {/* Contact */}
+        <div>
+          <h3 className="text-xs font-bold uppercase tracking-[0.18em] text-neutral-600 mb-5">
+            Legal & Contact
+          </h3>
+          <ul className="space-y-3">
+            {[
+              { href: "/privacy", label: "Privacy Policy" },
+              { href: "/terms", label: "Terms of Service" },
+            ].map(({ href, label }) => (
+              <li key={label}>
+                <a
+                  href={href}
+                  className="text-sm text-neutral-600 hover:text-neutral-200 transition-colors duration-200 font-light"
+                >
+                  {label}
+                </a>
+              </li>
+            ))}
+            <li className="pt-1">
+              <a
+                href="mailto:abdisileshi123@gmail.com"
+                className="text-sm text-violet-500/70 hover:text-violet-400 transition-colors duration-200 font-light"
+              >
+                abdisileshi123@gmail.com
               </a>
             </li>
           </ul>
         </div>
-
-        {/* Contact & Social */}
-        <div className="w-full">
-          <h3 className="text-lg md:text-2xl font-semibold text-white mb-2">
-            Connect With Us
-          </h3>
-          <p className="text-sm mb-4 text-neutral-400">
-            Have questions? Email us at{" "}
-            <a href="mailto:abdisileshi123@gmail.com" className="underline">
-              abdisileshi123@gmail.com
-            </a>
-          </p>
-          <div className="flex space-x-4">
-            <a
-              href="https://github.com/Ketoransile"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <FaGithub className="text-xl hover:text-white" />
-            </a>
-            <a
-              href="https://www.linkedin.com/in/abdi-sileshi-56710a2a6/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <FaLinkedin className="text-xl hover:text-white" />
-            </a>
-            <a
-              href="https://x.com/abdi_sileshi"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <FaTwitter className="text-xl hover:text-white" />
-            </a>
-          </div>
-        </div>
       </div>
 
-      {/* Footer Bottom */}
-      <div className="mt-8 border-t border-white/10 pt-4 text-center text-xs text-neutral-500">
-        © {new Date().getFullYear()} ElevateCV. All rights reserved.
+      {/* Bottom bar */}
+      <div className="flex flex-col sm:flex-row items-center justify-between gap-3 pt-6 border-t border-white/5">
+        <span className="text-xs text-neutral-700 font-light">
+          © {new Date().getFullYear()} ElevateCV. Built with care.
+        </span>
+        <span className="text-xs text-neutral-800 font-light italic">
+          Helping candidates put their best foot forward.
+        </span>
       </div>
     </footer>
   );

@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Plus_Jakarta_Sans, Outfit } from "next/font/google";
+import { Playfair_Display, Inter } from "next/font/google";
 import "./globals.css";
 import { Header } from "@/components/Header";
 import { ClerkProvider } from "@clerk/nextjs";
@@ -7,20 +7,25 @@ import { dark } from "@clerk/themes";
 import Footer from "@/components/Footer";
 import { Toaster } from "@/components/ui/sonner";
 
-const plusJakartaSans = Plus_Jakarta_Sans({
+// Primary body font – clean, humanist, legible at all sizes
+const inter = Inter({
   subsets: ["latin"],
-  variable: "--font-plus-jakarta",
+  variable: "--font-inter",
+  display: "swap",
 });
 
-const outfit = Outfit({
+// Display / editorial font – used for headings with italic flair
+const playfair = Playfair_Display({
   subsets: ["latin"],
-  variable: "--font-outfit",
+  variable: "--font-playfair",
+  display: "swap",
+  style: ["normal", "italic"],
 });
 
 export const metadata: Metadata = {
-  title: "ElevateCV | AI powered Resume Analyzer",
+  title: "ElevateCV | AI-Powered Resume Analyzer",
   description:
-    "ElevateCV: Get your resume analyzed by our AI-powered tool with GPT-5. Instantly see your match score, skill gaps, and get actionable tips to land more interviews.",
+    "ElevateCV uses AI to score your resume like a recruiter would. Get instant keyword matching, skill gap analysis, and tailored tips to land more interviews — completely free.",
 };
 
 export default function RootLayout({
@@ -32,17 +37,39 @@ export default function RootLayout({
     <ClerkProvider appearance={{ baseTheme: dark }}>
       <html lang="en" className="dark scroll-smooth">
         <body
-          className={`${plusJakartaSans.variable} ${outfit.variable} font-sans antialiased bg-black text-white relative min-h-screen`}
+          className={`${inter.variable} ${playfair.variable} font-sans antialiased bg-[#080808] text-white relative min-h-screen`}
         >
-          {/* Global Background Grid & Glows */}
-          <div className="fixed inset-0 w-full h-full bg-black -z-50 pointer-events-none overflow-hidden">
-            {/* Grid Pattern */}
-            <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff05_1px,transparent_1px),linear-gradient(to_bottom,#ffffff05_1px,transparent_1px)] bg-[size:32px_32px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)]" />
-            
-            {/* Blurred Glowing Blobs */}
-            <div className="absolute top-[-10%] left-[50%] -translate-x-1/2 w-[600px] h-[600px] bg-indigo-500/10 rounded-full blur-[130px]" />
-            <div className="absolute top-[30%] left-[10%] w-[400px] h-[400px] bg-purple-500/5 rounded-full blur-[100px] animate-pulse" style={{ animationDuration: '8s' }} />
-            <div className="absolute top-[60%] right-[10%] w-[500px] h-[500px] bg-indigo-500/5 rounded-full blur-[120px]" />
+          {/* ── Global Background ── */}
+          <div className="fixed inset-0 w-full h-full -z-50 pointer-events-none overflow-hidden">
+            {/* Fine dot grid */}
+            <div
+              className="absolute inset-0"
+              style={{
+                backgroundImage:
+                  "radial-gradient(circle, rgba(255,255,255,0.035) 1px, transparent 1px)",
+                backgroundSize: "28px 28px",
+                maskImage:
+                  "radial-gradient(ellipse 80% 60% at 50% 0%, #000 40%, transparent 100%)",
+              }}
+            />
+
+            {/* Primary violet glow – top center */}
+            <div
+              className="absolute top-[-8%] left-1/2 -translate-x-1/2 w-[700px] h-[500px] rounded-full blur-[140px]"
+              style={{ background: "rgba(124,58,237,0.09)" }}
+            />
+
+            {/* Secondary indigo glow – mid left */}
+            <div
+              className="absolute top-[35%] left-[-5%] w-[400px] h-[400px] rounded-full blur-[120px]"
+              style={{ background: "rgba(99,102,241,0.05)", animationDuration: "10s" }}
+            />
+
+            {/* Tertiary glow – lower right */}
+            <div
+              className="absolute bottom-[10%] right-[-5%] w-[450px] h-[450px] rounded-full blur-[130px]"
+              style={{ background: "rgba(139,92,246,0.04)" }}
+            />
           </div>
 
           <Header />
@@ -56,4 +83,3 @@ export default function RootLayout({
     </ClerkProvider>
   );
 }
-

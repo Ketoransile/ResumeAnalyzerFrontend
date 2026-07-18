@@ -1,27 +1,27 @@
 import { IResumeAnalysisResult } from "@/app/result/[id]/fetchResumeAnalysis";
-import { Button } from "./ui/button"; // Assuming your Button component path
 import dayjs from "dayjs";
 import { usePathname } from "next/navigation";
 
 const getScoreColor = (score: number) => {
-  if (score >= 0 && score <= 39) return "bg-red-600"; // Tailwind class
-  if (score >= 40 && score <= 69) return "bg-amber-500"; // Tailwind class
-  if (score >= 70 && score <= 89) return "bg-green-600"; // Tailwind class
-  if (score >= 90 && score <= 100) return "bg-blue-600"; // Tailwind class
-  return "bg-neutral-500"; // Default or gray
+  if (score >= 0 && score <= 39) return "text-red-400 bg-red-500/10 border-red-500/20";
+  if (score >= 40 && score <= 69) return "text-amber-400 bg-amber-500/10 border-amber-500/20";
+  if (score >= 70 && score <= 89) return "text-emerald-400 bg-emerald-500/10 border-emerald-500/20";
+  if (score >= 90 && score <= 100) return "text-violet-400 bg-violet-500/10 border-violet-500/20";
+  return "text-neutral-400 bg-neutral-500/10 border-neutral-500/20";
 };
 
 interface IResumeAnalysisCardParams {
   analysisData: IResumeAnalysisResult;
   onClick: () => void;
 }
+
 export const ResumeAnalysisCard = ({
   analysisData,
   onClick,
 }: IResumeAnalysisCardParams) => {
   const pathname = usePathname();
   const activeCard: boolean = pathname.includes(`${analysisData._id}`);
-  if (!analysisData) return null; // Ensure data exists before rendering
+  if (!analysisData) return null;
 
   const {
     resumeFileName,
@@ -30,53 +30,51 @@ export const ResumeAnalysisCard = ({
     overall_fit_score,
   } = analysisData;
 
-  // const formattedDate = analysisDate ? formatDate(analysisDate) : "N/A";
-  const formattedDate = dayjs(analysisDate).format("YYYY-MM-DD ");
+  const formattedDate = dayjs(analysisDate).format("MMM D, YYYY");
   const formattedTime = dayjs(analysisDate).format("h:mm A");
-  const scoreBgColor = getScoreColor(overall_fit_score); // Get the appropriate background color class
+  const scoreClasses = getScoreColor(overall_fit_score);
 
   return (
     <div
       className={`
-    flex flex-col items-start gap-4 p-4 rounded-xl
-    border
-    transition-all duration-200 ease-in-out
-    cursor-pointer
-    
-    ${activeCard
-          ? "bg-indigo-900/20 backdrop-blur-md border-indigo-500/50 text-white shadow-lg shadow-indigo-500/10" // Active styling
-          : "bg-neutral-900/40 backdrop-blur-sm border-white/5 text-neutral-300 shadow-sm hover:bg-neutral-900/60 hover:border-white/10 hover:text-white hover:shadow-md" // Default styling
+        group flex flex-col gap-3 p-4 rounded-2xl border
+        transition-all duration-200 cursor-pointer
+        ${
+          activeCard
+            ? "bg-violet-500/8 border-violet-500/25 shadow-lg shadow-violet-500/5"
+            : "bg-white/[0.02] border-white/5 hover:bg-white/[0.04] hover:border-white/10"
         }
-  `}
-      onClick={onClick} // Makes the entire card clickable
+      `}
+      onClick={onClick}
     >
-      <div className="w-full flex items-center justify-between">
-        <h1 className="text-sm font-semibold truncate max-w-[calc(100%-80px)]">
+      {/* Header row */}
+      <div className="w-full flex items-start justify-between gap-2">
+        <h3
+          className={`text-sm font-semibold truncate max-w-[70%] ${
+            activeCard ? "text-white" : "text-neutral-300 group-hover:text-white"
+          } transition-colors`}
+        >
           {resumeFileName || "Untitled Resume"}
-        </h1>
-        <div className="flex flex-col gap-2">
-          <p className="text-xs flex-shrink-0 opacity-80">{formattedDate}</p>
-          <p className="text-xs flex-shrink-0 opacity-80">{formattedTime}</p>
+        </h3>
+        <div className="flex flex-col items-end gap-0.5 flex-shrink-0">
+          <span className="text-[10px] text-neutral-600 font-medium">{formattedDate}</span>
+          <span className="text-[10px] text-neutral-700">{formattedTime}</span>
         </div>
       </div>
 
-      <p className="text-sm line-clamp-2 leading-tight">
+      {/* Job description preview */}
+      <p className="text-xs text-neutral-600 line-clamp-2 leading-relaxed font-light">
         {jobDescriptionText || "No job description provided."}
       </p>
 
-      <div className="flex items-center gap-2 flex-wrap">
-        <Button
-          className={`rounded-full px-4 py-1 text-xs font-bold text-white
-        ${scoreBgColor}
-        hover:${scoreBgColor.replace("bg-", "bg-")}/80
-        transition-colors duration-200
-        min-w-[70px] justify-center
-      `}
-          size="sm"
-          disabled
+      {/* Score badge */}
+      <div className="flex items-center">
+        <span
+          className={`inline-flex items-center gap-1.5 rounded-full px-3 py-1 text-xs font-bold border ${scoreClasses}`}
         >
-          Score {overall_fit_score}%
-        </Button>
+          <span className="tabular-nums">{overall_fit_score}%</span>
+          <span className="font-medium opacity-70">match</span>
+        </span>
       </div>
     </div>
   );

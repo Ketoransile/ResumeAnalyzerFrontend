@@ -32,14 +32,14 @@ export const Header = () => {
   }, [isMobileMenuOpen]);
 
   return (
-    <nav className="fixed top-6 left-1/2 -translate-x-1/2 z-50 w-[90%] max-w-6xl border border-white/10 bg-black/60 backdrop-blur-xl rounded-2xl shadow-2xl shadow-black/80 transition-all duration-300">
+    <nav className="fixed top-6 left-1/2 -translate-x-1/2 z-50 w-[90%] max-w-6xl border border-white/8 bg-[#080808]/80 backdrop-blur-2xl rounded-2xl shadow-2xl shadow-black/90 transition-all duration-300">
       <div className="flex items-center justify-between px-6 py-3">
         {/* Brand */}
         <Link href="/" className="relative z-50 flex items-center gap-2.5 group">
-          <div className="h-9 w-9 bg-gradient-to-tr from-indigo-600 to-purple-600 rounded-xl flex items-center justify-center shadow-lg shadow-indigo-500/25 ring-1 ring-white/10 group-hover:scale-105 transition-transform duration-300">
-            <span className="text-white font-black text-lg">E</span>
+          <div className="h-8 w-8 bg-gradient-to-br from-violet-600 to-indigo-600 rounded-xl flex items-center justify-center shadow-lg shadow-violet-500/20 ring-1 ring-white/10 group-hover:scale-105 transition-transform duration-300">
+            <span className="text-white font-black text-sm">E</span>
           </div>
-          <span className="text-xl font-bold tracking-tight text-white group-hover:text-neutral-200 transition-all duration-300 font-display">
+          <span className="text-[1.1rem] font-bold tracking-tight text-white group-hover:text-neutral-200 transition-all duration-300">
             ElevateCV
           </span>
         </Link>
@@ -96,7 +96,7 @@ export const Header = () => {
                 <Link href="/sign-in">Sign In</Link>
               </Button>
               <Button
-                className="bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-500 hover:to-purple-500 text-white transition-all duration-300 font-semibold shadow-lg shadow-indigo-600/30 px-5 rounded-xl hover:scale-102 border-0"
+                className="bg-white text-black hover:bg-neutral-100 transition-all duration-200 font-semibold shadow-md shadow-white/10 px-5 rounded-xl border-0 text-sm"
                 asChild
               >
                 <Link href="/sign-up">Get Started</Link>
@@ -178,7 +178,7 @@ export const Header = () => {
                     <Link href="/sign-in">Sign In</Link>
                   </Button>
                   <Button
-                    className="w-full justify-center h-11 text-sm font-semibold bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-500 hover:to-purple-500 text-white shadow-lg shadow-indigo-600/30 border-0"
+                    className="w-full justify-center h-11 text-sm font-semibold bg-white text-black hover:bg-neutral-100 shadow-md border-0"
                     asChild
                   >
                     <Link href="/sign-up">Get Started</Link>
