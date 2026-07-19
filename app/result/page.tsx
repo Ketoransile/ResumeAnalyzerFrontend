@@ -8,7 +8,7 @@ import { fetchAllResumeAnalysis } from "./[id]/fetchAllResumeAnalysis";
 import { IResumeAnalysisResult } from "./[id]/fetchResumeAnalysis";
 import dayjs from "dayjs";
 import relativeTime from "dayjs/plugin/relativeTime";
-import { FiPlus, FiArrowRight, FiFileText, FiCalendar, FiActivity } from "react-icons/fi";
+import { FiPlus, FiArrowRight, FiFileText, FiCalendar } from "react-icons/fi";
 
 dayjs.extend(relativeTime);
 
